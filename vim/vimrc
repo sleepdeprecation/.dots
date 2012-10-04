@@ -1,0 +1,57 @@
+" pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+" color stuffs
+colorscheme solarized
+"set background=dark
+set background=light
+set t_Co=16
+
+" basics
+set number
+syntax on
+set nocompatible " with vi
+set bs=2
+set history=50
+set ruler
+set autoread
+
+" filetypes and auto indent
+filetype on
+filetype indent on
+filetype plugin on
+
+" highlight searches
+set hlsearch
+
+" show stuffs
+set showmatch
+set showmode
+
+"  stuffs
+set autoindent
+set incsearch
+set nobackup
+set copyindent
+set ignorecase
+set tabstop=4
+
+" smart stuffs
+set smartcase
+set smarttab  " tabbing
+
+" word wrap
+set wrap
+set linebreak
+set nolist
+set tw=75
+
+" powerlines stuffs
+set laststatus=2
+set encoding=utf-8
+
+
+" syntax highlighting?
+au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile *.md set filetype=markdown

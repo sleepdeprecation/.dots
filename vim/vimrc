@@ -4,8 +4,8 @@ call pathogen#helptags()
 
 " color stuffs
 colorscheme solarized
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 set t_Co=16
 
 " basics

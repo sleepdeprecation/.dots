@@ -34,7 +34,7 @@ plugins=(git mericurial rails ruby sublime vi-mode github gem archlinux pip pyth
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/projects/chromium/depot_tools:/home/don/.rvm/bin:/home/don/projects/chromium/depot_tools
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/projects/chromium/depot_tools:/home/don/.gem/ruby/1.9.1/bin:/home/don/projects/chromium/depot_tools
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

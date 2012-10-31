@@ -3,10 +3,12 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " color stuffs
-colorscheme solarized
+"colorscheme solarized
+colorscheme molokai
 set background=dark
 "set background=light
-set t_Co=16
+"set t_Co=16
+set t_Co=256
 
 " basics
 set number
@@ -16,6 +18,7 @@ set bs=2
 set history=50
 set ruler
 set autoread
+set linespace=2
 
 " filetypes and auto indent
 filetype on
@@ -45,7 +48,7 @@ set smarttab  " tabbing
 set wrap
 set linebreak
 set nolist
-set tw=75
+set tw=78
 
 " powerlines stuffs
 set laststatus=2

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="band9" mtime="1353700376" type="float" value="-9.5"/>
+	<entry name="band8" mtime="1353700376" type="float" value="-7"/>
+	<entry name="band7" mtime="1353700376" type="float" value="-7"/>
+	<entry name="band6" mtime="1353700376" type="float" value="-6"/>
+	<entry name="band5" mtime="1353700376" type="float" value="-2"/>
+	<entry name="band4" mtime="1353700376" type="float" value="-0.90000000000000002"/>
+	<entry name="band3" mtime="1353700376" type="float" value="0"/>
+	<entry name="band2" mtime="1353700376" type="float" value="2"/>
+	<entry name="band1" mtime="1353700376" type="float" value="-0.90000000000000002"/>
+	<entry name="band0" mtime="1353700376" type="float" value="-4.0999999999999996"/>
+</gconf>

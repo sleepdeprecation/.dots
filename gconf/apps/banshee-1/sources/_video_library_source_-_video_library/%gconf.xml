@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="copy-on-import" mtime="1350773065" type="bool" value="false"/>
+	<entry name="library-location" mtime="1350183809" type="string">
+		<stringvalue>/home/don/videos</stringvalue>
+	</entry>
+	<entry name="expanded" mtime="1353442520" type="bool" value="true"/>
+</gconf>

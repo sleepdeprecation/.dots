@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="preset" mtime="1353700578" type="string">
+		<stringvalue>default</stringvalue>
+	</entry>
+</gconf>

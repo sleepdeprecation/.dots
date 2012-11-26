@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="last_file_chooser_uri" mtime="1353442525" type="string">
+		<stringvalue>file:///media/Sails/Music</stringvalue>
+	</entry>
+	<entry name="height" mtime="1350183790" type="int" value="700"/>
+	<entry name="width" mtime="1350183790" type="int" value="1024"/>
+	<entry name="y_pos" mtime="1350183790" type="int" value="190"/>
+	<entry name="x_pos" mtime="1350183790" type="int" value="448"/>
+	<entry name="maximized" mtime="1353442521" type="bool" value="true"/>
+	<entry name="disable_album_grid" mtime="1353442520" type="bool" value="false"/>
+	<entry name="seek_slider_width" mtime="1353442520" type="int" value="1024"/>
+	<entry name="source_view_width" mtime="1353442526" type="int" value="175"/>
+</gconf>

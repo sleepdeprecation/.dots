@@ -29,7 +29,7 @@ ZSH_THEME="kennethreitz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mericurial rails ruby sublime vi-mode github gem archlinux pip python rvm rake rails3)
+plugins=(git mericurial rails ruby sublime github gem archlinux pip python rvm rake rails3)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,6 +44,7 @@ export LESS="-R"
 
 # sudo aliases
 alias pacman='sudo pacman-color'
+alias apt-get='sudo apt-get'
 alias pip='sudo pip'
 alias pip2='sudo pip2'
 alias reboot='sudo reboot'
@@ -72,4 +73,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # gem stuff
-export GEM_HOME="~/.gem/ruby/1.9.1"
+#export GEM_HOME="~/.gem/ruby/1.9.1"
+
+function gvim () { (/usr/bin/gvim -f "$@" &) }
+

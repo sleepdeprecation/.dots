@@ -38,7 +38,11 @@ set incsearch
 set nobackup
 set copyindent
 set ignorecase
-set tabstop=4
+
+" tab things
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " smart stuffs
 set smartcase
@@ -54,6 +58,8 @@ set tw=78
 set laststatus=2
 set encoding=utf-8
 
+" guifont
+set guifont=Ubuntu\ Mono\ 11
 
 " syntax highlighting?
 au BufRead,BufNewFile Gemfile set filetype=ruby

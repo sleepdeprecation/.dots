@@ -7,6 +7,9 @@ function pgb() {
 		git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+# gvim global menu
+function gvim () { (/usr/bin/gvim -f "$@" &) }
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

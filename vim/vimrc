@@ -38,7 +38,10 @@ set incsearch
 set nobackup
 set copyindent
 set ignorecase
-set tabstop=4
+set tabstop=2
+
+set ts=2
+set sw=2
 
 " smart stuffs
 set smartcase

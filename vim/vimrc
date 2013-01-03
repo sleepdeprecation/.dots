@@ -43,6 +43,10 @@ set ignorecase
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set tabstop=2
+
+set ts=2
+set sw=2
 
 " smart stuffs
 set smartcase
@@ -57,9 +61,6 @@ set tw=78
 " powerlines stuffs
 set laststatus=2
 set encoding=utf-8
-
-" guifont
-
 
 " syntax highlighting?
 au BufRead,BufNewFile Gemfile set filetype=ruby

@@ -59,7 +59,7 @@ set laststatus=2
 set encoding=utf-8
 
 " guifont
-set guifont=Ubuntu\ Mono\ 11
+
 
 " syntax highlighting?
 au BufRead,BufNewFile Gemfile set filetype=ruby

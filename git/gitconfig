@@ -25,5 +25,8 @@
 		#resets
 		r = reset
 		r1 = reset HEAD^
-		r2 = reset HEAD^^
+	  r2 = reset HEAD^^
+    
+		# more fun stuff
+	  com = "!git add . && git commit"
 

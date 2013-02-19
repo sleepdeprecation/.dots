@@ -38,6 +38,7 @@ set incsearch
 set nobackup
 set copyindent
 set ignorecase
+set smartcase
 set tabstop=2
 
 set ts=2
@@ -61,3 +62,30 @@ set encoding=utf-8
 " syntax highlighting?
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" new things from http://statico.github.com/vim.html
+:nmap \l :setlocal number!<CR>
+:nmap \o :set paste!<CR>
+:nmap \q :nohlsearch<CR> " turn off search highlighting 
+
+" move up and down "graphical" lines
+:nmap j gj
+:nmap k gk
+
+" move between buffers
+:nmap <C-e> :e#<CR>
+:nmap \n :bnext<CR>
+:nmap \p :bprev<CR>
+
+" ctrl-p stuffs
+:let g:ctrlp_map = '<Leader>t'
+:let g:ctrlp_match_window_bottom = 0
+:let g:ctrlp_match_window_reversed = 0
+:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+:let g:ctrlp_working_path_mode = 0
+:let g:ctrlp_dotfiles = 0
+:let g:ctrlp_switch_buffer = 0
+
+" NERDTree things
+:nmap \e :NERDTreeToggle<CR>
+

@@ -39,7 +39,11 @@ set nobackup
 set copyindent
 set ignorecase
 set smartcase
+
+" tab things
 set tabstop=2
+set shiftwidth=2
+set expandtab
 
 set ts=2
 set sw=2
@@ -57,7 +61,6 @@ set tw=78
 " powerlines stuffs
 set laststatus=2
 set encoding=utf-8
-
 
 " syntax highlighting?
 au BufRead,BufNewFile Gemfile set filetype=ruby

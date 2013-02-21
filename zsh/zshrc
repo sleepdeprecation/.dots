@@ -29,12 +29,12 @@ ZSH_THEME="kennethreitz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mericurial rails ruby sublime github gem archlinux pip python rvm rake rails3)
+plugins=(git mericurial rails ruby sublime github gem archlinux pip python rvm rake rails3 virtualenvwrapper git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/projects/chromium/depot_tools:/home/don/.gem/ruby/1.9.1/bin:/home/don/projects/chromium/depot_tools:/home/don/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/.gem/ruby/1.9.1/bin:/home/don/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -63,6 +63,7 @@ alias vconsult='ssh vconsult@consultvelocity.com'
 
 alias git=hub
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
+alias git=hub
 
 # color aliases
 alias ls='ls -p --color=auto'
@@ -73,6 +74,8 @@ alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias aurora='firefox-aurora'
 
 # gem stuff
 #export GEM_HOME="~/.gem/ruby/1.9.1"

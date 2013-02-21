@@ -43,10 +43,11 @@ export EDITOR="vim"
 export LESS="-R"
 
 # sudo aliases
+alias _="sudo"
 alias pacman='sudo pacman-color'
 alias apt-get='sudo apt-get'
-alias pip='sudo pip'
-alias pip2='sudo pip2'
+#alias pip='sudo pip'
+#alias pip2='sudo pip2'
 alias reboot='sudo reboot'
 alias shutdown='sudo shutdown'
 alias systemctl='sudo systemctl'

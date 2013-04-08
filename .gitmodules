@@ -19,3 +19,6 @@
 [submodule "vim/vim/bundle/vim-powerline"]
 	path = vim/vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/vim/bundle/badwolf"]
+	path = vim/vim/bundle/badwolf
+	url = https://github.com/sjl/badwolf.git

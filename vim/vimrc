@@ -3,8 +3,8 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " color stuffs
-"colorscheme solarized
-colorscheme molokai
+colorscheme badwolf
+"colorscheme molokai
 set background=dark
 "set background=light
 "set t_Co=16
@@ -34,6 +34,7 @@ set showmode
 
 "  stuffs
 set autoindent
+set smartindent
 set incsearch
 set nobackup
 set copyindent

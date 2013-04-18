@@ -34,7 +34,7 @@ plugins=(git mericurial rails ruby sublime github gem archlinux pip python rvm r
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/.gem/ruby/1.9.1/bin:/home/don/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/.gem/ruby/2.0.0/bin:/home/don/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -44,7 +44,8 @@ export LESS="-R"
 
 # sudo aliases
 alias _="sudo"
-alias pacman='sudo pacman-color'
+#alias pacman='sudo pacman-color'
+alias pacman='sudo pacman'
 alias apt-get='sudo apt-get'
 #alias pip='sudo pip'
 #alias pip2='sudo pip2'

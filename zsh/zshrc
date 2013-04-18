@@ -41,6 +41,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bi
 # set some variables?
 export EDITOR="vim"
 export LESS="-R"
+export GOPATH=~/go
 
 # sudo aliases
 alias _="sudo"

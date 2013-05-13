@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/don/projects/php-the-right-way'
-let g:netrw_dirhist_2='/home/don/projects/consultvelocity.com/.git'
-let g:netrw_dirhist_3='/home/don/projects/dkuntz2.com/source/_drafts'
-let g:netrw_dirhist_4='/home/don/.vim'
-let g:netrw_dirhist_5='/home/don/projects/dkuntz2.com/source'
-let g:netrw_dirhist_6='/home/don/projects/dkuntz2.com/source/_assets/_scss'
-let g:netrw_dirhist_7='/home/don/.wine/drive_c/users/don/Application Data'
-let g:netrw_dirhist_8='/home/don/projects/dkuntz2.com/_tasks'
-let g:netrw_dirhist_9='/home/don/downloads/solar/pkg'
+let g:netrw_dirhist_cnt =0

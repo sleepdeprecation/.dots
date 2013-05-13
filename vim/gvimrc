@@ -1,3 +1,4 @@
 set guifont=Source\ Code\ Pro\ 10
 set lines=30
-set columns=84
+"set columns=150
+set columns=85

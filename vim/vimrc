@@ -6,8 +6,6 @@ call pathogen#helptags()
 colorscheme badwolf
 "colorscheme molokai
 set background=dark
-"set background=light
-"set t_Co=16
 set t_Co=256
 
 " basics
@@ -39,7 +37,6 @@ set incsearch
 set nobackup
 set copyindent
 set ignorecase
-set smartcase
 
 " tab things
 set tabstop=2
@@ -53,12 +50,6 @@ set sw=2
 set smartcase
 set smarttab  " tabbing
 
-" word wrap
-set wrap
-set linebreak
-set nolist
-set tw=78
-
 " powerlines stuffs
 set laststatus=2
 set encoding=utf-8
@@ -71,6 +62,12 @@ au BufRead,BufNewFile *.md set filetype=markdown
 :nmap \l :setlocal number!<CR>
 :nmap \o :set paste!<CR>
 :nmap \q :nohlsearch<CR> " turn off search highlighting 
+
+" force hjkl navigation
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
 " move up and down "graphical" lines
 :nmap j gj
@@ -90,6 +87,25 @@ au BufRead,BufNewFile *.md set filetype=markdown
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
 
+" Why should I have to type :CtrlP?
+:nmap <C-p> :CtrlPMixed<CR>
+
 " NERDTree things
 :nmap \e :NERDTreeToggle<CR>
+
+" make split screens nicer
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
+
+set spell
+set tw=80
+set wrap
+set linebreak
+set nolist
 

@@ -31,7 +31,9 @@ plugins=(git mericurial rails ruby sublime github gem archlinux pip python rvm r
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/bin:/usr/local/heroku/bin:/home/don/.rvm/gems/ruby-1.9.2-p320/bin
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/bin:/usr/local/heroku/bin:/home/don/.rvm/gems/ruby-1.9.2-p320/bin
+
+export PATH=/home/don/bin:$PATH:/home/don/.rvm/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -60,9 +62,7 @@ alias vba='VisualBoyAdvance'
 alias dk2='ssh dkuntzco@dkuntz2.com'
 alias vconsult='ssh vconsult@consultvelocity.com'
 
-alias git=hub
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
-alias git=hub
 
 # color aliases
 alias ls='ls -p --color=auto'
@@ -74,7 +74,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias aurora='firefox-aurora'
+alias gksu='gksudo'
+alias play='play2'
 
 # gem stuff
 #export GEM_HOME="~/.gem/ruby/1.9.1"

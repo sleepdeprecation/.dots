@@ -64,14 +64,19 @@ au BufRead,BufNewFile *.md set filetype=markdown
 :nmap \q :nohlsearch<CR> " turn off search highlighting 
 
 " force hjkl navigation
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
 
 " move up and down "graphical" lines
 :nmap j gj
 :nmap k gk
+
+:map <Down> gj
+:map <Up> gk
+:imap <Down> <C-o>gj
+:imap <Up> <C-o>gk
 
 " move between buffers
 :nmap <C-e> :e#<CR>
@@ -104,8 +109,14 @@ set splitright
 
 
 set spell
-set tw=80
+"set tw=80
 set wrap
 set linebreak
 set nolist
+
+set colorcolumn=81 " 1 past 80...
+
+" markin-downs, gitcommit, hgcommit
+autocmd BufNewFile,BufRead *.md,*.markdown set tw=80
+
 

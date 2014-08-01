@@ -26,14 +26,14 @@ ZSH_THEME="kennethreitz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mericurial rails ruby sublime github gem archlinux pip python rvm rake rails3 git-extras)
+plugins=(git ruby sublime github gem pip python rvm rake git-extras osx)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/bin:/usr/local/heroku/bin:/home/don/.rvm/gems/ruby-1.9.2-p320/bin
 
-export PATH=/home/don/bin:$PATH:/home/don/.rvm/bin
+export PATH=$HOME/bin:$PATH:$HOME/.rvm/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -44,11 +44,8 @@ export GOPATH=~/go
 
 # sudo aliases
 alias _="sudo"
-#alias pacman='sudo pacman-color'
 alias pacman='sudo pacman'
 alias apt-get='sudo apt-get'
-#alias pip='sudo pip'
-#alias pip2='sudo pip2'
 alias reboot='sudo reboot'
 alias shutdown='sudo shutdown'
 alias systemctl='sudo systemctl'
@@ -57,16 +54,12 @@ alias susu='sudo su -'
 
 # other aliases
 alias more='less'
-alias open='xdg-open'
 alias vba='VisualBoyAdvance'
-alias dk2='ssh dkuntzco@dkuntz2.com'
-alias vconsult='ssh vconsult@consultvelocity.com'
 
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 
 # color aliases
-alias ls='ls -p --color=auto'
-alias diff='colordiff'
+alias ls='ls -pG'
 alias grep='grep --color=auto'
 
 # ls stuff
@@ -74,11 +67,18 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias gksu='gksudo'
-alias play='play2'
 
-# gem stuff
-#export GEM_HOME="~/.gem/ruby/1.9.1"
+# tmux stuffs
+tmux-join() {
+  tmux -S /tmp/$1 new-session -t $1
+}
 
-function gvim () { (/usr/bin/gvim -f "$@" &) }
+tmux-list() {
+  ps ax -o ruser,command | grep '[n]ew-session -s' | ruby -ne '$_ =~ /^(\w+).*-s (\w+)/; puts "#{$1} started #{$2}"'
+}
 
+tmux-start() {
+  tmux -S /tmp/$1 new-session -s $1 -d
+  chmod 777 /tmp/$1
+  tmux -S /tmp/$1 attach -t $1
+}

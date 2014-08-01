@@ -1,4 +1,4 @@
-set guifont=Droid\ Sans\ Mono\ 10
+set guifont=Fira\ Mono:h12
 set lines=30
 "set columns=150
-set columns=85
+set columns=100

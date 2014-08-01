@@ -1,27 +1,43 @@
-" pathogen
-call pathogen#infect()
-call pathogen#helptags()
+set nocompatible " with vi
+filetype off
+
+" set runtime path to include vundle, initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" vundle, manage vundle
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tmhedberg/matchit'
+Plugin 'vim-scripts/tComment'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'fatih/vim-go'
+Plugin 'guns/vim-clojure-static'
+
+call vundle#end()
+filetype plugin indent on
+
+" ============= Non-Vundle stuffs =============  
 
 " color stuffs
-colorscheme badwolf
-"colorscheme molokai
+"colorscheme badwolf
+colorscheme molokai
 set background=dark
 set t_Co=256
 
 " basics
 set number
 syntax on
-set nocompatible " with vi
 set bs=2
 set history=50
 set ruler
 set autoread
 set linespace=0
-
-" filetypes and auto indent
-filetype on
-filetype indent on
-filetype plugin on
 
 " highlight searches
 set hlsearch
@@ -84,7 +100,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 :nmap \p :bprev<CR>
 
 " ctrl-p stuffs
-:let g:ctrlp_map = '<Leader>t'
+:let g:ctrlp_map = '<leader>ff'
 :let g:ctrlp_match_window_bottom = 0
 :let g:ctrlp_match_window_reversed = 0
 :let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'

@@ -2,36 +2,38 @@
 	email = don@dkuntz2.com
 	name = Don Kuntz
 [push]
-	default = upstream
+	default = current
+[pull]
+	rebase = true
 [color]
 	ui = true
 [alias]
-		ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-		fl = log -u
-		dl = "!git ll -1"
-		f = "!git ls-files | grep -i"
-		grep = grep -Ii
-		la = "!git config -l | grep alias | cut -c 7-"
-		done = "!f() { git branch | grep "$1" | cut -c 3- | grep -v done | xargs - I{} git branch -m {} done-{}; }; f"
-		st = status -s
-		cl = clone
-		cp = cherry-pick
-		ci = commit
-		co = checkout
-		br = branch
-		diff = diff --word-diff
-		dc = diff --cached
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	fl = log -u
+	dl = "!git ll -1"
+	f = "!git ls-files | grep -i"
+	grep = grep -Ii
+	la = "!git config -l | grep alias | cut -c 7-"
+	done = "!f() { git branch | grep "$1" | cut -c 3- | grep -v done | xargs - I{} git branch -m {} done-{}; }; f"
+	st = status -s
+	cl = clone
+	cp = cherry-pick
+	ci = commit
+	co = checkout
+	br = branch
+	diff = diff --word-diff
+	dc = diff --cached
 
 		#resets
-		r = reset
-		r1 = reset HEAD^
-	  r2 = reset HEAD^^
-    
-		# more fun stuff
-	  com = "!git add . && git commit"
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
 
-    addall = add -A .
-    staged = diff --cached
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    oneline = log --pretty=format:\"%h %ad%x20%s%x20%x28%an%x29\" --date=short
-    current = log --pretty=format:'%ad %h %d' --abbrev-commit --date=short -1
+		# more fun stuff
+	com = "!git add . && git commit"
+
+	addall = add -A .
+	staged = diff --cached
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	oneline = log --pretty=format:\"%h %ad%x20%s%x20%x28%an%x29\" --date=short
+	current = log --pretty=format:'%ad %h %d' --abbrev-commit --date=short -1

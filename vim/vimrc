@@ -18,6 +18,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'fatih/vim-go'
 Plugin 'guns/vim-clojure-static'
+Plugin 'ciaranm/detectindent'
+Plugin 'jlanzarotta/bufexplorer'
 
 call vundle#end()
 filetype plugin indent on
@@ -55,12 +57,12 @@ set copyindent
 set ignorecase
 
 " tab things
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
+"set expandtab
 
-set ts=2
-set sw=2
+set ts=4
+set sw=4
 
 " smart stuffs
 set smartcase
@@ -99,6 +101,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 :nmap \n :bnext<CR>
 :nmap \p :bprev<CR>
 
+" Automatic tab detection
+autocmd BufReadPost * :DetectIndent
+:let g:detectindent_preferred_expandtab = 1 
+:let g:detectindent_preferred_indent = 4
+
 " ctrl-p stuffs
 :let g:ctrlp_map = '<leader>ff'
 :let g:ctrlp_match_window_bottom = 0
@@ -112,7 +119,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 :nmap <C-p> :CtrlPMixed<CR>
 
 " NERDTree things
-:nmap \e :NERDTreeToggle<CR>
+:nmap \nt :NERDTreeToggle<CR>
+:nmap \nf :NERDTreeFocus<CR>
 
 " make split screens nicer
 nnoremap <C-J> <C-W><C-J>
@@ -135,4 +143,5 @@ set colorcolumn=81 " 1 past 80...
 " markin-downs, gitcommit, hgcommit
 autocmd BufNewFile,BufRead *.md,*.markdown set tw=80
 
-
+set nofoldenable
+let g:vim_markdown_folding_disabled=1

@@ -31,9 +31,6 @@ plugins=(git ruby sublime github gem pip python rvm rake git-extras osx)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/don/.rvm/bin:/home/don/bin:/usr/local/heroku/bin:/home/don/.rvm/gems/ruby-1.9.2-p320/bin
-
-export PATH=$HOME/bin:$PATH:$HOME/.rvm/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -41,6 +38,8 @@ export PATH=$HOME/bin:$PATH:$HOME/.rvm/bin
 export EDITOR="vim"
 export LESS="-R"
 export GOPATH=~/go
+
+export PATH=$HOME/bin:$PATH:$HOME/.rvm/bin:$GOPATH/bin
 
 # sudo aliases
 alias _="sudo"

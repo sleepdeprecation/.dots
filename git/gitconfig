@@ -24,12 +24,12 @@
 	diff = diff --word-diff
 	dc = diff --cached
 
-		#resets
+	#resets
 	r = reset
 	r1 = reset HEAD^
 	r2 = reset HEAD^^
 
-		# more fun stuff
+	# more fun stuff
 	com = "!git add . && git commit"
 
 	addall = add -A .
@@ -37,3 +37,4 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	oneline = log --pretty=format:\"%h %ad%x20%s%x20%x28%an%x29\" --date=short
 	current = log --pretty=format:'%ad %h %d' --abbrev-commit --date=short -1
+	prettylog = log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph

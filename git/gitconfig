@@ -34,6 +34,7 @@
 
 	# more fun stuff
 	com = "!git add . && git commit"
+	inc = "!git add -A . && git commit -m \"incremental changes\""
 
 	addall = add -A .
 	staged = diff --cached

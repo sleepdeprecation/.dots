@@ -81,3 +81,6 @@ tmux-start() {
   chmod 777 /tmp/$1
   tmux -S /tmp/$1 attach -t $1
 }
+
+# thanks OS X!
+export LANG=en_US.UTF-8

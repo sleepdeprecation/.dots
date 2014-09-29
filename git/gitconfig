@@ -5,6 +5,7 @@
 	default = current
 [pull]
 	rebase = true
+	default = current
 [color]
 	ui = true
 [alias]
@@ -23,6 +24,8 @@
 	br = branch
 	diff = diff --word-diff
 	dc = diff --cached
+	sed = ! git grep -z --full-name -l '.' | xargs -0 sed -i '' -e
+	rebase-master = ! git pull origin master:master && git rebase master
 
 	#resets
 	r = reset

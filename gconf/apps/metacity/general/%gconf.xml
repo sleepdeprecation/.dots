@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="button_layout" mtime="1353630461" type="string">
-		<stringvalue>close,minimize,maximize:</stringvalue>
-	</entry>
-</gconf>

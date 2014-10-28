@@ -39,7 +39,7 @@ export EDITOR="vim"
 export LESS="-R"
 export GOPATH=~/go
 
-export PATH=$HOME/bin:$PATH:$HOME/.rvm/bin:$GOPATH/bin
+export PATH=$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH:$HOME/.rvm/bin:$GOPATH/bin
 
 # sudo aliases
 alias _="sudo"
@@ -58,7 +58,8 @@ alias vba='VisualBoyAdvance'
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 
 # color aliases
-alias ls='ls -pG'
+#alias ls='ls -pG'
+alias ls='gls -pF --color=auto'
 alias grep='grep --color=auto'
 
 # ls stuff

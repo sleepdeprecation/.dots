@@ -5,5 +5,4 @@ ln -s -f $(pwd)/vim/gvimrc ~/.gvimrc
 ln -s -f $(pwd)/bash/bash_colors ~/.bash_colors
 ln -s -f $(pwd)/bash/bashrc ~/.bashrc
 ln -s -f $(pwd)/git/gitconfig ~/.gitconfig
-ln -s -f $(pwd)/gconf ~/.gconf
-
+ln -s -f $(pwd)/tmux.conf ~/.tmux.conf

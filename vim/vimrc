@@ -6,31 +6,48 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " vundle, manage vundle
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'          " plugin manager
+Plugin 'tpope/vim-sensible'         " sensible defaults
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'       " syntax checker
+
 Plugin 'bkad/CamelCaseMotion'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tmhedberg/matchit'
-Plugin 'vim-scripts/tComment'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-ruby/vim-ruby'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ciaranm/detectindent'       " indentation detection like sublime
 Plugin 'fatih/vim-go'
 Plugin 'guns/vim-clojure-static'
-Plugin 'ciaranm/detectindent'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kien/ctrlp.vim'
+Plugin 'nono/jquery.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
+Plugin 'scrooloose/nerdcommenter'   " easy commenting
+Plugin 'scrooloose/nerdtree'        " file browser
+Plugin 'thoughtbot/vim-rspec'       " rspec helper
+Plugin 'tmhedberg/matchit'
+Plugin 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
+Plugin 'tpope/vim-fugitive'         " git support
+Plugin 'tpope/vim-rails'            " rails stuffs
+Plugin 'tpope/vim-surround'         " easy changing of 'wrapping' characters
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/tComment'
+
+" Color schemes
+Plugin 'altercation/vim-colors-solarized'   " solarized
+Plugin 'sjl/badwolf'                        " badwolf
 
 call vundle#end()
 filetype plugin indent on
 
-" ============= Non-Vundle stuffs =============  
+" ============= Non-Vundle stuffs =============
 
 " color stuffs
-"colorscheme badwolf
-colorscheme molokai
+colorscheme badwolf
 set background=dark
 set t_Co=256
+
+    " bad wolf settings
+    let g:badwolf_darkgutter=1
 
 " basics
 set number
@@ -79,7 +96,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " new things from http://statico.github.com/vim.html
 :nmap \l :setlocal number!<CR>
 :nmap \o :set paste!<CR>
-:nmap \q :nohlsearch<CR> " turn off search highlighting 
+:nmap \q :nohlsearch<CR> " turn off search highlighting
 
 " force hjkl navigation
 "nnoremap <Left> :echoe "Use h"<CR>
@@ -103,7 +120,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Automatic tab detection
 autocmd BufReadPost * :DetectIndent
-:let g:detectindent_preferred_expandtab = 1 
+:let g:detectindent_preferred_expandtab = 1
 :let g:detectindent_preferred_indent = 4
 
 " ctrl-p stuffs
@@ -143,5 +160,25 @@ set colorcolumn=81 " 1 past 80...
 " markin-downs, gitcommit, hgcommit
 autocmd BufNewFile,BufRead *.md,*.markdown set tw=80
 
+" jquery plugin
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" rspec mapping
+nmap \rf :call RunCurrentSpecFile()<CR>
+nmap \rs :call RunNearestSpec()<CR>
+nmap \rl :call RunLastSpec()<CR>
+map \ra :call RunAllSpecs()<CR>
+
 set nofoldenable
 let g:vim_markdown_folding_disabled=1
+
+" fuck swp files
+set backupdir=/tmp
+set directory=.,/tmp
+
+" gui stuff
+if has('gui_running')
+    set guifont=Fira\ Mono:h13
+    set lines=30
+    set columns=100
+endif

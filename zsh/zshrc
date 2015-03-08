@@ -39,7 +39,7 @@ export EDITOR="vim"
 export LESS="-R"
 export GOPATH=~/go
 
-export PATH=$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH:$HOME/.rvm/bin:$GOPATH/bin
+export PATH=$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$GOPATH/bin
 
 # sudo aliases
 alias _="sudo"
@@ -67,6 +67,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias httpme='python3 -m http.server'
+
 
 # tmux stuffs
 tmux-join() {
@@ -85,3 +87,6 @@ tmux-start() {
 
 # thanks OS X!
 export LANG=en_US.UTF-8
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

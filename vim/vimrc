@@ -31,6 +31,8 @@ Plugin 'tpope/vim-rails'            " rails stuffs
 Plugin 'tpope/vim-surround'         " easy changing of 'wrapping' characters
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/tComment'
+Plugin 'udalov/kotlin-vim'
+Plugin 'tfnico/vim-gradle'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'   " solarized
@@ -173,12 +175,17 @@ set nofoldenable
 let g:vim_markdown_folding_disabled=1
 
 " fuck swp files
-set backupdir=/tmp
-set directory=.,/tmp
+set backupdir=/tmp//
+set directory=/tmp//
 
 " gui stuff
 if has('gui_running')
     set guifont=Fira\ Mono:h13
     set lines=30
-    set columns=100
+    set columns=120
+    autocmd vimenter * NERDTree
 endif
+
+" nerdtree stuffs
+let NERDTreeMapOpenRecursively="+"
+let NERDTreeMapCloseChildren="-"

@@ -68,7 +68,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias httpme='python3 -m http.server'
-
+alias python='python3'
 
 # tmux stuffs
 tmux-join() {

@@ -33,6 +33,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/tComment'
 Plugin 'udalov/kotlin-vim'
 Plugin 'tfnico/vim-gradle'
+Plugin 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'   " solarized

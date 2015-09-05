@@ -16,7 +16,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ciaranm/detectindent'       " indentation detection like sublime
 Plugin 'fatih/vim-go'
 Plugin 'guns/vim-clojure-static'
-Plugin 'jlanzarotta/bufexplorer'
+Plugin 'braintreeps/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nono/jquery.vim'
 Plugin 'plasticboy/vim-markdown'
@@ -34,6 +34,13 @@ Plugin 'vim-scripts/tComment'
 Plugin 'udalov/kotlin-vim'
 Plugin 'tfnico/vim-gradle'
 Plugin 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
+
+" Vimux
+Plugin 'benmills/vimux'
+Plugin 'drewolson/vimux-maven-test'
+Plugin 'drewolson/vimux-elixir-test'
+Plugin 'pitluga/vimux-nose-test'
+Plugin 'pgr0ss/vimux-ruby-test'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'   " solarized
@@ -190,3 +197,7 @@ endif
 " nerdtree stuffs
 let NERDTreeMapOpenRecursively="+"
 let NERDTreeMapCloseChildren="-"
+
+" vimux stuff
+let g:VimuxUseNearestPane = 1
+

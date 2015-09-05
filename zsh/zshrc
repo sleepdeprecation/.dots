@@ -39,7 +39,12 @@ export EDITOR="vim"
 export LESS="-R"
 export GOPATH=~/go
 
-export PATH=$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$PATH:$GOPATH/bin
+if [[ `uname -s` == "Darwin" ]]; then
+	export PATH = $(brew --prefix coreutils)/libexec/gnubin:$PATH
+fi
+
+export PATH=$HOME/bin:/usr/local/sbin:$PATH:$GOPATH/bin
+
 
 # sudo aliases
 alias _="sudo"
@@ -57,9 +62,14 @@ alias vba='VisualBoyAdvance'
 
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 
+
 # color aliases
 #alias ls='ls -pG'
-alias ls='gls -pF --color=auto'
+if [[ `uname -s` == "Darwin" ]]; then
+	alias ls='gls -pF --color=auto'
+elif [[ `uname -s` == "Linux" ]]; then
+	alias ls='ls -pF --color=auto';
+fi
 alias grep='grep --color=auto'
 
 # ls stuff

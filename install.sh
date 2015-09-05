@@ -1,6 +1,8 @@
 # grab oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
+git clone https://github.com/VundleVim/Vundle.vim.git $PWD/vim/vim/bundle/Vundle.vim
+
 ln -s -f $(pwd)/zsh/zshrc ~/.zshrc
 ln -s -f $(pwd)/vim/vim ~/.vim
 ln -s -f $(pwd)/vim/vimrc ~/.vimrc

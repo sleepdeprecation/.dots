@@ -188,7 +188,7 @@ set directory=/tmp//
 
 " gui stuff
 if has('gui_running')
-    set guifont=Fira\ Mono:h13
+    set guifont=Fira\ Mono:h10
     set lines=30
     set columns=120
     autocmd vimenter * NERDTree

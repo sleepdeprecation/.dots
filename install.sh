@@ -27,6 +27,9 @@ ln -s -f $(pwd)/git/gitconfig ~/.gitconfig
 ln -s -f $(pwd)/tmux.conf ~/.tmux.conf
 ln -s -f $(pwd)/zsh/dkuntz.zsh-theme ~/.oh-my-zsh/themes/dkuntz.zsh-theme
 
+# install vim plugins
+vim +PluginClean +PluginInstall +qall
+
 if [ $SHELL != `which zsh` ]; then
     echo "chsh"
     chsh -s `which zsh`

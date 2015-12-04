@@ -38,9 +38,10 @@ export EDITOR="vim"
 export LESS="-R"
 export GOPATH=~/go
 
-if [[ `uname -s` == "Darwin" ]]; then
-	export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-fi
+# HOMEBREW UPGRADE
+#if [[ `uname -s` == "Darwin" ]]; then
+	#export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+#fi
 
 export PATH=$HOME/bin:/usr/local/sbin:$PATH:$GOPATH/bin
 
@@ -65,7 +66,11 @@ alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 # color aliases
 #alias ls='ls -pG'
 if [[ `uname -s` == "Darwin" ]]; then
-	alias ls='gls -pF --color=auto'
+	if [ -x /usr/local/bin/gls ]; then
+		alias ls='gls -pF --color=auto'
+	else
+		alias ls='ls -pFG'
+	fi
 elif [[ `uname -s` == "Linux" ]]; then
 	alias ls='ls -pF --color=auto';
 fi
@@ -89,10 +94,20 @@ tmux-list() {
 }
 
 tmux-start() {
-  tmux -S /tmp/$1 new-session -s $1 -d
-  chmod 777 /tmp/$1
-  tmux -S /tmp/$1 attach -t $1
+  if [[ $1 ]]; then
+		SESSION_NAME=$1
+	else
+		SESSION_NAME=`basename $PWD`
+	fi
+  tmux -S /tmp/$SESSION_NAME new-session -s $SESSION_NAME -d
+  chmod 777 /tmp/$SESSION_NAME
+  tmux -S /tmp/$SESSION_NAME attach -t $SESSION_NAME
 }
+
+alias tmuxjoin='tmux-join'
+alias tmuxlist='tmux-list'
+alias tmuxstart='tmux-start'
+alias tmuxs='tmux-start'
 
 # thanks OS X!
 export LANG=en_US.UTF-8

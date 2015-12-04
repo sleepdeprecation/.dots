@@ -1,52 +1,52 @@
 set nocompatible " with vi
 filetype off
 
-" set runtime path to include vundle, initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
-" vundle, manage vundle
-Plugin 'gmarik/Vundle.vim'          " plugin manager
-Plugin 'tpope/vim-sensible'         " sensible defaults
+" vim-plug plugins
+Plug 'gmarik/Vundle.vim'          " plugin manager
+Plug 'tpope/vim-sensible'         " sensible defaults
 
-Plugin 'scrooloose/syntastic'       " syntax checker
+Plug 'scrooloose/syntastic'       " syntax checker
 
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'ciaranm/detectindent'       " indentation detection like sublime
-Plugin 'fatih/vim-go'
-Plugin 'guns/vim-clojure-static'
-Plugin 'braintreeps/bufexplorer'
-Plugin 'kien/ctrlp.vim'
-Plugin 'nono/jquery.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
-Plugin 'scrooloose/nerdcommenter'   " easy commenting
-Plugin 'scrooloose/nerdtree'        " file browser
-Plugin 'thoughtbot/vim-rspec'       " rspec helper
-Plugin 'tmhedberg/matchit'
-Plugin 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
-Plugin 'tpope/vim-fugitive'         " git support
-Plugin 'tpope/vim-rails'            " rails stuffs
-Plugin 'tpope/vim-surround'         " easy changing of 'wrapping' characters
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/tComment'
-Plugin 'udalov/kotlin-vim'
-Plugin 'tfnico/vim-gradle'
-Plugin 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
+Plug 'bkad/CamelCaseMotion'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'ciaranm/detectindent'       " indentation detection like sublime
+Plug 'fatih/vim-go'
+Plug 'guns/vim-clojure-static'
+Plug 'braintreeps/bufexplorer'
+Plug 'kien/ctrlp.vim'
+Plug 'nono/jquery.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
+Plug 'scrooloose/nerdcommenter'   " easy commenting
+Plug 'scrooloose/nerdtree'        " file browser
+Plug 'thoughtbot/vim-rspec'       " rspec helper
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
+Plug 'tpope/vim-fugitive'         " git support
+Plug 'tpope/vim-rails'            " rails stuffs
+Plug 'tpope/vim-surround'         " easy changing of 'wrapping' characters
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/tComment'
+Plug 'udalov/kotlin-vim'
+Plug 'tfnico/vim-gradle'
+Plug 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
 
 " Vimux
-Plugin 'benmills/vimux'
-Plugin 'drewolson/vimux-maven-test'
-Plugin 'drewolson/vimux-elixir-test'
-Plugin 'pitluga/vimux-nose-test'
-Plugin 'pgr0ss/vimux-ruby-test'
+Plug 'benmills/vimux'
+Plug 'drewolson/vimux-maven-test'
+Plug 'drewolson/vimux-elixir-test'
+Plug 'pitluga/vimux-nose-test'
+Plug 'pgr0ss/vimux-ruby-test'
 
 " Color schemes
-Plugin 'altercation/vim-colors-solarized'   " solarized
-Plugin 'sjl/badwolf'                        " badwolf
+Plug 'altercation/vim-colors-solarized'   " solarized
+Plug 'sjl/badwolf'                        " badwolf
 
-call vundle#end()
+call plug#end()
+
 filetype plugin indent on
 
 " ============= Non-Vundle stuffs =============

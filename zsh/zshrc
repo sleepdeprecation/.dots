@@ -25,23 +25,20 @@ ZSH_THEME="dkuntz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby sublime github gem pip python rvm rake git-extras osx)
+plugins=(git ruby sublime github gem pip python rake git-extras osx)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # set some variables?
 export EDITOR="vim"
 export LESS="-R"
 export GOPATH=~/go
 
-# HOMEBREW UPGRADE
-#if [[ `uname -s` == "Darwin" ]]; then
-	#export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-#fi
+if [[ `uname -s` == "Darwin" ]]; then
+	export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+fi
 
 export PATH=$HOME/bin:/usr/local/sbin:$PATH:$GOPATH/bin
 
@@ -61,6 +58,8 @@ alias more='less'
 alias vba='VisualBoyAdvance'
 
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
+
+alias be="bundle exec"
 
 
 # color aliases

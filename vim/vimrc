@@ -16,7 +16,7 @@ Plug 'ciaranm/detectindent'       " indentation detection like sublime
 Plug 'fatih/vim-go'
 Plug 'guns/vim-clojure-static'
 Plug 'braintreeps/bufexplorer'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nono/jquery.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
@@ -29,7 +29,7 @@ Plug 'tpope/vim-fugitive'         " git support
 Plug 'tpope/vim-rails'            " rails stuffs
 Plug 'tpope/vim-surround'         " easy changing of 'wrapping' characters
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/tComment'
+Plug 'tomtom/tcomment_vim'
 Plug 'udalov/kotlin-vim'
 Plug 'tfnico/vim-gradle'
 Plug 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
@@ -48,8 +48,6 @@ Plug 'sjl/badwolf'                        " badwolf
 call plug#end()
 
 filetype plugin indent on
-
-" ============= Non-Vundle stuffs =============
 
 " color stuffs
 colorscheme badwolf
@@ -84,12 +82,17 @@ set copyindent
 set ignorecase
 
 " tab things
-set tabstop=4
-set shiftwidth=4
-"set expandtab
+set expandtab
+set textwidth=0
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set sw=2
 
-set ts=4
-set sw=4
+"autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
+"autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
+"autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4
+"autocmd FileType c setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " smart stuffs
 set smartcase
@@ -131,7 +134,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Automatic tab detection
 autocmd BufReadPost * :DetectIndent
 :let g:detectindent_preferred_expandtab = 1
-:let g:detectindent_preferred_indent = 4
+:let g:detectindent_preferred_indent = 2
 
 " ctrl-p stuffs
 :let g:ctrlp_map = '<leader>ff'
@@ -141,6 +144,7 @@ autocmd BufReadPost * :DetectIndent
 :let g:ctrlp_working_path_mode = 0
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
+:let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Why should I have to type :CtrlP?
 :nmap <C-p> :CtrlPMixed<CR>

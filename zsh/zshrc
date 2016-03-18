@@ -81,7 +81,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias httpme='python3 -m http.server'
-alias python='python3'
 
 # tmux stuffs
 tmux-join() {
@@ -93,11 +92,12 @@ tmux-list() {
 }
 
 tmux-start() {
-  if [[ $1 ]]; then
+  if [[ ! -z $1 ]]; then
 		SESSION_NAME=$1
 	else
 		SESSION_NAME=`basename $PWD`
 	fi
+
   tmux -S /tmp/$SESSION_NAME new-session -s $SESSION_NAME -d
   chmod 777 /tmp/$SESSION_NAME
   tmux -S /tmp/$SESSION_NAME attach -t $SESSION_NAME

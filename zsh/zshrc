@@ -36,7 +36,9 @@ export EDITOR="vim"
 export LESS="-R"
 export GOPATH=~/go
 
-if [[ `uname -s` == "Darwin" ]]; then
+OS=`uname -s`
+
+if [[ $OS == "Darwin" ]]; then
 	export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 fi
 
@@ -63,16 +65,16 @@ alias be="bundle exec"
 
 
 # color aliases
-#alias ls='ls -pG'
-if [[ `uname -s` == "Darwin" ]]; then
+if [[ $OS == "Darwin" ]]; then
 	if [ -x /usr/local/bin/gls ]; then
-		alias ls='gls -pF --color=auto'
+		alias ls='gls -pFN --color=auto'
 	else
 		alias ls='ls -pFG'
 	fi
-elif [[ `uname -s` == "Linux" ]]; then
-	alias ls='ls -pF --color=auto';
+elif [[ $OS == "Linux" ]]; then
+	alias ls='ls -pFN --color=auto';
 fi
+
 alias grep='grep --color=auto'
 
 # ls stuff
@@ -97,7 +99,6 @@ tmux-start() {
 	else
 		SESSION_NAME=`basename $PWD`
 	fi
-
   tmux -S /tmp/$SESSION_NAME new-session -s $SESSION_NAME -d
   chmod 777 /tmp/$SESSION_NAME
   tmux -S /tmp/$SESSION_NAME attach -t $SESSION_NAME
@@ -113,3 +114,8 @@ export LANG=en_US.UTF-8
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+alias stq='ssh support01.stq'
+alias stc='ssh support01.stc'
+alias chi='ssh support01.chi'
+alias warp='ssh warp'

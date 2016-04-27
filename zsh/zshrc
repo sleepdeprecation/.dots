@@ -1,35 +1,14 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="dkuntz"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ruby sublime github gem pip python rake git-extras osx)
-
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
 
 # set some variables?
 export EDITOR="vim"
@@ -37,13 +16,12 @@ export LESS="-R"
 export GOPATH=~/go
 
 OS=`uname -s`
-
 if [[ $OS == "Darwin" ]]; then
 	export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+	export LANG=en_US.UTF-8
 fi
 
 export PATH=$HOME/bin:/usr/local/sbin:$PATH:$GOPATH/bin
-
 
 # sudo aliases
 alias _="sudo"
@@ -88,10 +66,12 @@ alias httpme='python3 -m http.server'
 tmux-join() {
   tmux -S /tmp/$1 new-session -t $1
 }
+alias tmuxjoin='tmux-join'
 
 tmux-list() {
   ps ax -o ruser,command | grep '[n]ew-session -s' | ruby -ne '$_ =~ /^(\w+).*-s (\w+)/; puts "#{$1} started #{$2}"'
 }
+alias tmuxlist='tmux-list'
 
 tmux-start() {
   if [[ ! -z $1 ]]; then
@@ -103,19 +83,12 @@ tmux-start() {
   chmod 777 /tmp/$SESSION_NAME
   tmux -S /tmp/$SESSION_NAME attach -t $SESSION_NAME
 }
-
-alias tmuxjoin='tmux-join'
-alias tmuxlist='tmux-list'
 alias tmuxstart='tmux-start'
-alias tmuxs='tmux-start'
 
-# thanks OS X!
-export LANG=en_US.UTF-8
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-alias stq='ssh support01.stq'
-alias stc='ssh support01.stc'
-alias chi='ssh support01.chi'
-alias warp='ssh warp'
+if [ -f ~/.aliases ]; then
+	source ~/.aliases
+fi

@@ -89,6 +89,6 @@ alias tmuxstart='tmux-start'
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-if [ -f ~/.aliases ]; then
-	source ~/.aliases
+if [ -f ~/.local_profile ]; then
+	source ~/.local_profile
 fi

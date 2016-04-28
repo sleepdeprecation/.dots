@@ -24,3 +24,7 @@ if [ $SHELL != `which zsh` ]; then
     echo "chsh"
     chsh -s `which zsh`
 fi
+
+if [ -f ~/.aliases ]; then
+	mv ~/.aliases ~/.local_profile
+fi

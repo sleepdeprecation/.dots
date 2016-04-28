@@ -35,6 +35,7 @@ Plug 'tfnico/vim-gradle'
 Plug 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
 Plug 'othree/html5.vim'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'mustache/vim-mustache-handlebars'
 
 " Vimux
 Plug 'benmills/vimux'

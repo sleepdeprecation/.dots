@@ -1,14 +1,8 @@
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="dkuntz"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-plugins=(git ruby sublime github gem pip python rake git-extras osx)
-source $ZSH/oh-my-zsh.sh
+if [[ -d $HOME/.zsh_lib ]]; then
+	for config_file ($HOME/.zsh_lib/*.zsh); do
+		source $config_file
+	done
+fi
 
 export EDITOR="vim"
 export LESS="-RFX"
@@ -39,11 +33,6 @@ alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 
 alias be="bundle exec"
 
-if [[ -d $HOME/.zsh_lib ]]; then
-	for config_file ($HOME/.zsh_lib/*.zsh); do
-		source $config_file
-	done
-fi
 
 # color aliases
 if [[ $OS == "Darwin" ]]; then

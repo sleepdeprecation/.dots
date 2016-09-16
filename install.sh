@@ -9,16 +9,12 @@ else
 fi
 
 # overwrite anyways.
-ln -s -f $(pwd)/zshrc ~/.zshrc
-ln -s -f $(pwd)/vim ~/.vim
-ln -s -f $(pwd)/vimrc ~/.vimrc
-ln -s -f $(pwd)/gvimrc ~/.gvimrc
-ln -s -f $(pwd)/gitconfig ~/.gitconfig
-ln -s -f $(pwd)/tmux.conf ~/.tmux.conf
-ln -s -f $(pwd)/dkuntz.zsh-theme ~/.oh-my-zsh/themes/dkuntz.zsh-theme
+for item in zshrc vim vimrc gvimrc gitconfig tmux.conf; do
+	ln -s -f $DOTSTUFFDIR/$item ~/.$item
+done
 
 # install vim plugins
-vim +PlugClean +PlugInstall +qall
+vim +PlugUpgrade +PlugClean +PlugUpgrade +PlugInstall +qall
 
 if [ $SHELL != `which zsh` ]; then
     echo "chsh"

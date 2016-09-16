@@ -36,6 +36,7 @@ Plug 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
 Plug 'othree/html5.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'rhysd/vim-crystal'
 
 " Vimux
 Plug 'benmills/vimux'
@@ -57,8 +58,8 @@ colorscheme badwolf
 set background=dark
 set t_Co=256
 
-    " bad wolf settings
-    let g:badwolf_darkgutter=1
+" bad wolf settings
+let g:badwolf_darkgutter=1
 
 " basics
 set number
@@ -90,7 +91,6 @@ set textwidth=0
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set sw=2
 
 "autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
 "autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
@@ -110,9 +110,9 @@ au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " new things from http://statico.github.com/vim.html
-:nmap \l :setlocal number!<CR>
-:nmap \o :set paste!<CR>
-:nmap \q :nohlsearch<CR> " turn off search highlighting
+nmap \l :setlocal number!<CR>
+nmap \o :set paste!<CR>
+nmap \q :nohlsearch<CR> " turn off search highlighting
 
 " force hjkl navigation
 "nnoremap <Left> :echoe "Use h"<CR>
@@ -121,40 +121,48 @@ au BufRead,BufNewFile *.md set filetype=markdown
 "nnoremap <Down> :echoe "Use j"<CR>
 
 " move up and down "graphical" lines
-:nmap j gj
-:nmap k gk
+nmap j gj
+nmap k gk
 
-:map <Down> gj
-:map <Up> gk
-:imap <Down> <C-o>gj
-:imap <Up> <C-o>gk
+map <Down> gj
+map <Up> gk
+imap <Down> <C-o>gj
+imap <Up> <C-o>gk
 
 " move between buffers
-:nmap <C-e> :e#<CR>
-:nmap \n :bnext<CR>
-:nmap \p :bprev<CR>
+nmap <C-e> :e#<CR>
+nmap \n :bnext<CR>
+nmap \p :bprev<CR>
 
 " Automatic tab detection
 autocmd BufReadPost * :DetectIndent
-:let g:detectindent_preferred_expandtab = 1
-:let g:detectindent_preferred_indent = 2
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
 
 " ctrl-p stuffs
-:let g:ctrlp_map = '<leader>ff'
-:let g:ctrlp_match_window_bottom = 0
-:let g:ctrlp_match_window_reversed = 0
-:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-:let g:ctrlp_working_path_mode = 0
-:let g:ctrlp_dotfiles = 0
-:let g:ctrlp_switch_buffer = 0
-:let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_map = '<leader>ff'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = {
+    \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files . -oc --exclude-standard', 'find %s -type f'],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+    \ 'fallback': 'find %s -type f'
+\ }
+
 
 " Why should I have to type :CtrlP?
-:nmap <C-p> :CtrlPMixed<CR>
+nmap <C-p> :CtrlPMixed<CR>
 
 " NERDTree things
-:nmap \nt :NERDTreeToggle<CR>
-:nmap \nf :NERDTreeFocus<CR>
+nmap \nt :NERDTreeToggle<CR>
+nmap \nf :NERDTreeFocus<CR>
 
 " make split screens nicer
 nnoremap <C-J> <C-W><C-J>
@@ -207,4 +215,3 @@ let NERDTreeMapCloseChildren="-"
 
 " vimux stuff
 "let g:VimuxUseNearestPane = 1
-

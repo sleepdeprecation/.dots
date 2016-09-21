@@ -6,6 +6,7 @@ fi
 
 # overwrite anyways.
 for item in zshrc zsh_lib vim vimrc gvimrc gitconfig tmux.conf; do
+	rm -rf ~/.$item
 	ln -s -f $DOTSTUFFDIR/$item ~/.$item
 done
 

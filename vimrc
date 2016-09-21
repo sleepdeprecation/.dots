@@ -156,6 +156,8 @@ nmap <C-p> :CtrlPMixed<CR>
 " NERDTree things
 nmap \nt :NERDTreeToggle<CR>
 nmap \nf :NERDTreeFocus<CR>
+let NERDTreeMapOpenRecursively="+"
+let NERDTreeMapCloseChildren="-"
 
 " make split screens nicer
 nnoremap <C-J> <C-W><C-J>
@@ -200,10 +202,6 @@ if has('gui_running')
     set columns=120
     autocmd vimenter * NERDTree
 endif
-
-" nerdtree stuffs
-let NERDTreeMapOpenRecursively="+"
-let NERDTreeMapCloseChildren="-"
 
 " vimux stuff
 "let g:VimuxUseNearestPane = 1

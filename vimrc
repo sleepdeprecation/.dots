@@ -171,6 +171,10 @@ autocmd BufNewFile,BufRead *.md,*.markdown set tw=80
 " jquery plugin
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
+" go
+au FileType go set noexpandtab ts=4
+autocmd BufRead,BufNewFile *.go set noexpandtab ts=4 sw=4 softtabstop=4
+
 " rspec mapping
 nmap \rf :call RunCurrentSpecFile()<CR>
 nmap \rs :call RunNearestSpec()<CR>

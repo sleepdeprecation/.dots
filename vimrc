@@ -57,8 +57,6 @@ filetype plugin indent on
 colorscheme badwolf
 set background=dark
 set t_Co=256
-
-" bad wolf settings
 let g:badwolf_darkgutter=1
 
 " basics
@@ -77,15 +75,12 @@ set hlsearch
 set showmatch
 set showmode
 
-"  stuffs
 set autoindent
 set smartindent
 set incsearch
 set nobackup
 set copyindent
 set ignorecase
-
-" tab things
 set expandtab
 set textwidth=0
 set tabstop=2
@@ -99,13 +94,13 @@ set softtabstop=2
 
 " smart stuffs
 set smartcase
-set smarttab  " tabbing
+set smarttab
 
 " powerlines stuffs
 set laststatus=2
 set encoding=utf-8
 
-" syntax highlighting?
+" syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
@@ -156,8 +151,6 @@ let g:ctrlp_user_command = {
     \ 'fallback': 'find %s -type f'
 \ }
 
-
-" Why should I have to type :CtrlP?
 nmap <C-p> :CtrlPMixed<CR>
 
 " NERDTree things
@@ -175,7 +168,6 @@ set splitright
 
 
 set spell
-"set tw=80
 set wrap
 set linebreak
 set nolist

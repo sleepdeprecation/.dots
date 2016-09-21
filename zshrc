@@ -11,8 +11,8 @@ export GOPATH=~/go
 
 OS=`uname -s`
 if [[ $OS == "Darwin" ]]; then
-	if [ -f /usr/local/bin/brew ]; then
-		export PATH=$(brew --prefix coreutils)/libexec:$PATH
+	if [[ -d /usr/local/opt/coreutils ]]; then
+		export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 	fi
 	export LANG=en_US.UTF-8
 fi
@@ -36,8 +36,8 @@ alias be="bundle exec"
 
 # color aliases
 if [[ $OS == "Darwin" ]]; then
-	if [[ -x /usr/local/bin/gls ]]; then
-		alias ls='gls -pFN --color=auto'
+	if [[ -x /usr/local/opt/coreutils/libexec/gnubin/ls ]]; then
+		alias ls='ls -pFN --color=auto'
 	else
 		alias ls='ls -pFG'
 	fi

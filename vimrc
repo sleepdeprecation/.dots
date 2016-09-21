@@ -76,7 +76,6 @@ set showmatch
 set showmode
 
 set autoindent
-set smartindent
 set incsearch
 set nobackup
 set copyindent
@@ -86,11 +85,6 @@ set textwidth=0
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
-"autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
-"autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
-"autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4
-"autocmd FileType c setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " smart stuffs
 set smartcase
@@ -159,12 +153,7 @@ nmap \nf :NERDTreeFocus<CR>
 let NERDTreeMapOpenRecursively="+"
 let NERDTreeMapCloseChildren="-"
 
-" make split screens nicer
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
+" where new splits open
 set splitbelow
 set splitright
 

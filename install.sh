@@ -11,7 +11,7 @@ for item in zshrc zsh_lib vim vimrc gvimrc gitconfig tmux.conf; do
 done
 
 # install vim plugins
-vim +PlugUpgrade +PlugClean +PlugUpgrade +PlugInstall +qall
+vim +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall
 
 if [ $SHELL != `which zsh` ]; then
     echo "chsh"

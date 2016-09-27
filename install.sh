@@ -5,15 +5,21 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # overwrite anyways.
-for item in zshrc zsh_lib vim vimrc gvimrc gitconfig tmux.conf; do
-	rm -rf ~/.$item
+for item in zshrc zsh_lib/ vim/ vimrc gvimrc gitconfig tmux.conf; do
+	#rm -rf ~/.$item
 	ln -s -f $DOTSTUFFDIR/$item ~/.$item
 done
 
 # install vim plugins
 vim +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall
 
-if [ $SHELL != `which zsh` ]; then
+zsh=`which zsh`
+if [ $SHELL != $zsh ]; then
+	if [[ `uname -s` == "Darwin" && ! `grep $zsh /etc/shells` ]]; then
+		echo "Adding $zsh to /etc/shells"
+		echo "\n$zsh" | sudo tee -a /etc/shells > /dev/null
+	fi
+
     echo "chsh"
     chsh -s `which zsh`
 fi

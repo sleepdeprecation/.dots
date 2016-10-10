@@ -14,3 +14,6 @@ bindkey ' ' magic-space
 bindkey '^[[1;5C' forward-word
 
 bindkey '^[[3~' delete-char
+
+bindkey '^[[4~' end-of-line
+bindkey '^[[1~' beginning-of-line

@@ -20,7 +20,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nono/jquery.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
-Plug 'scrooloose/nerdcommenter'   " easy commenting
 Plug 'scrooloose/nerdtree'        " file browser
 Plug 'thoughtbot/vim-rspec'       " rspec helper
 Plug 'tmhedberg/matchit'
@@ -153,10 +152,12 @@ nmap \nf :NERDTreeFocus<CR>
 let NERDTreeMapOpenRecursively="+"
 let NERDTreeMapCloseChildren="-"
 
+" TComment
+map <localleader>cc :TComment<CR>
+
 " where new splits open
 set splitbelow
 set splitright
-
 
 set spell
 set wrap

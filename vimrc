@@ -36,6 +36,7 @@ Plug 'othree/html5.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rhysd/vim-crystal'
+Plug 'voxpupuli/vim-puppet'
 
 " Vimux
 Plug 'benmills/vimux'
@@ -175,6 +176,10 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " go
 au FileType go set noexpandtab ts=4
 autocmd BufRead,BufNewFile *.go set noexpandtab ts=4 sw=4 softtabstop=4
+
+" puppet
+au FileType puppet set noexpandtab ts=4
+autocmd BufRead,BufNewFile *.pp set ts=4 sw=4 softtabstop=4
 
 " rspec mapping
 nmap \rf :call RunCurrentSpecFile()<CR>

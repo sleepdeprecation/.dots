@@ -174,12 +174,16 @@ autocmd BufNewFile,BufRead *.md,*.markdown set tw=80
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " go
-au FileType go set noexpandtab ts=4
+au FileType go set noexpandtab ts=4 sw=4 softtabstop=4
 autocmd BufRead,BufNewFile *.go set noexpandtab ts=4 sw=4 softtabstop=4
 
+" python
+au FileType python set ts=4 sw=4 softtabstop=4 expandtab
+autocmd BufRead,BufNewFile *.py set ts=4 sw=4 softtabstop=4 expandtab
+
 " puppet
-au FileType puppet set noexpandtab ts=4
-autocmd BufRead,BufNewFile *.pp set ts=4 sw=4 softtabstop=4
+au FileType puppet set ts=4 sw=4 softtabstop=4 expandtab
+autocmd BufRead,BufNewFile *.pp set ts=4 sw=4 softtabstop=4 expandtab
 
 " rspec mapping
 nmap \rf :call RunCurrentSpecFile()<CR>

@@ -4,7 +4,7 @@ function venv() {
   else
     if [[ ! -d "$PWD/env" ]]; then
       echo "No virtualenv directory specified / \`env\` not found."
-      exit 1
+      return
     fi
     env_dir="env"
   fi

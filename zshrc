@@ -53,6 +53,11 @@ elif [[ -x /usr/local/bin/python2 || -x /usr/bin/python2 ]]; then
 	alias httpme='python2 -m SimpleHTTPServer'
 fi
 
+if [[ -d ~/.cargo ]]; then
+	# for rustup
+	source ~/.cargo/env
+fi
+
 if [ -f ~/.local_profile ]; then
 	source ~/.local_profile
 fi

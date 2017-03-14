@@ -14,6 +14,10 @@ if [[ $OS == "Darwin" ]]; then
 	if [[ -d /usr/local/opt/coreutils ]]; then
 		export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 	fi
+
+	if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then
+		export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+	fi
 	export LANG=en_US.UTF-8
 fi
 

@@ -152,6 +152,7 @@ nmap \nt :NERDTreeToggle<CR>
 nmap \nf :NERDTreeFocus<CR>
 let NERDTreeMapOpenRecursively="+"
 let NERDTreeMapCloseChildren="-"
+let NERDTreeIgnore = ['\.pyc$']
 
 " TComment
 map <localleader>cc :TComment<CR>

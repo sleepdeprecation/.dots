@@ -14,7 +14,7 @@ tmux-start() {
   if [[ ! -z $1 ]]; then
 		SESSION_NAME=$1
 	else
-		SESSION_NAME=`basename $PWD`
+		SESSION_NAME=`basename $PWD | sed -e 's/\./_/g'`
 	fi
   tmux -S /tmp/$SESSION_NAME new-session -s $SESSION_NAME -d
   chmod 777 /tmp/$SESSION_NAME

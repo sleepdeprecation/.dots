@@ -164,7 +164,8 @@ set splitright
 set spell
 set wrap
 set linebreak
-set nolist
+set list
+set listchars=tab:>\ 
 
 set colorcolumn=81 " 1 past 80...
 

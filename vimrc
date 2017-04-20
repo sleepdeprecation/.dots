@@ -82,9 +82,9 @@ set copyindent
 set ignorecase
 set expandtab
 set textwidth=0
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " smart stuffs
 set smartcase
@@ -126,7 +126,7 @@ nmap \p :bprev<CR>
 " Automatic tab detection
 autocmd BufReadPost * :DetectIndent
 let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 2
+let g:detectindent_preferred_indent = 4
 
 " ctrl-p stuffs
 let g:ctrlp_map = '<leader>ff'

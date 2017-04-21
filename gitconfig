@@ -17,7 +17,7 @@
 
 	addall = add -A .
 	staged = diff --cached
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	oneline = log --pretty=format:\"%h %ad%x20%s%x20%x28%an%x29\" --date=short
-	current = log --pretty=format:'%ad %h %d' --abbrev-commit --date=short -1
-	prettylog = log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph
+
+	hist = log --format='%C(green)%h%Creset %C(cyan)%an%Creset | %s (%C(red)%ad%Creset, %C(yellow)%ar%Creset)' --graph --date=short
+	longlog = log --format='%C(yellow)%h%Creset by %C(cyan)%an%Creset, %C(magenta)%ar%Creset | %s %d (%ad)' --date=short --graph
+	oneline = log --pretty=format:\"%h %ad%x21%s%x20%x28%an%x29\" --date=short

@@ -5,18 +5,21 @@ function gignore() {
     return 1
   fi
 
+  local git_root
   git_root=$(git rev-parse --show-toplevel 2> /dev/null)
   if [ "${git_root}x" = "x" ]; then
     echo "must be run in a git repo"
     return 1
   fi
 
+  local pattern
   for pattern in $@; do
     echo $pattern >> ${git_root}/.gitignore
   done
 }
 
 function gigedit() {
+  local git_root
   git_root=$(git rev-parse --show-toplevel 2> /dev/null)
   if [ "${git_root}x" = "x" ]; then
     echo "must be run in a git repo"

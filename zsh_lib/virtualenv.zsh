@@ -1,4 +1,5 @@
 function venv() {
+  local env_dir use_py
   if [[ ! -z $1 ]]; then
     env_dir=$1
   else

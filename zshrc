@@ -1,7 +1,10 @@
+OS=`uname -s`
 if [[ -d $HOME/.zsh_lib ]]; then
 	for config_file ($HOME/.zsh_lib/*.zsh); do
 		source $config_file
 	done
+
+	unset config_file
 fi
 
 export EDITOR="vim"
@@ -9,7 +12,6 @@ export LESS="-RFX"
 export PAGER="less"
 export GOPATH=~/go
 
-OS=`uname -s`
 if [[ $OS == "Darwin" ]]; then
 	if [[ -d /usr/local/opt/coreutils ]]; then
 		export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH

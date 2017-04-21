@@ -11,14 +11,15 @@ alias tmuxlist='tmux-list'
 alias tml='tmux-list'
 
 tmux-start() {
+  local session_name
   if [[ ! -z $1 ]]; then
-		SESSION_NAME=$1
-	else
-		SESSION_NAME=`basename $PWD | sed -e 's/\./_/g'`
-	fi
-  tmux -S /tmp/$SESSION_NAME new-session -s $SESSION_NAME -d
-  chmod 777 /tmp/$SESSION_NAME
-  tmux -S /tmp/$SESSION_NAME attach -t $SESSION_NAME
+    session_name=$1
+  else
+    session_name=`basename $PWD | sed -e 's/\./_/g'`
+  fi
+  tmux -S /tmp/$session_name new-session -s $session_name -d
+  chmod 777 /tmp/$session_name
+  tmux -S /tmp/$session_name attach -t $session_name
 }
 alias tmuxstart='tmux-start'
 alias tms='tmux-start'

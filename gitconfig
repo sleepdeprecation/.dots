@@ -5,9 +5,12 @@
 	name = Don Kuntz
 [push]
 	default = current
+	followTags = true
 [pull]
 	rebase = true
 	default = current
+[merge]
+	ff = only
 [color]
 	ui = true
 [alias]

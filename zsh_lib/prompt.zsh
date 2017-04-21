@@ -17,5 +17,5 @@ function _prompt_git_dirty() {
 	fi
 }
 
-PROMPT='%{$fg[cyan]%}$USER@$HOST%{$reset_color%} | %{$fg[green]%}%c $(_prompt_git_ref)%{$fg[red]%}%(!.#.»)%{$reset_color%} '
-RPS1='%{$fg[blue]%}%~ %{$reset_color%} ${return_code}'
+PROMPT='%{$fg[cyan]%}$USER@$HOST%{$reset_color%} | %{$fg[green]%}%~ $(_prompt_git_ref)%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+# RPS1='%{$fg[blue]%}%~ %{$reset_color%} ${return_code}'

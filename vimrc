@@ -5,33 +5,35 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 " vim-plug plugins
-Plug 'gmarik/Vundle.vim'          " plugin manager
 Plug 'tpope/vim-sensible'         " sensible defaults
 
 Plug 'scrooloose/syntastic'       " syntax checker
-
-Plug 'bkad/CamelCaseMotion'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'ciaranm/detectindent'       " indentation detection like sublime
+
+" file/buffer navigation
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'braintreeps/bufexplorer'
+Plug 'scrooloose/nerdtree'        " file browser
+
+" intra-buffer nav
+Plug 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
+Plug 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
+Plug 'tpope/vim-surround'         " easy changing of 'wrapping' characters
+Plug 'tomtom/tcomment_vim'
+Plug 'bronson/vim-trailing-whitespace'
+" Plug 'tmhedberg/matchit'
+
+" languages
 Plug 'fatih/vim-go'
 Plug 'guns/vim-clojure-static'
-Plug 'braintreeps/bufexplorer'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nono/jquery.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
-Plug 'scrooloose/nerdtree'        " file browser
-Plug 'thoughtbot/vim-rspec'       " rspec helper
-Plug 'tmhedberg/matchit'
-Plug 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
-Plug 'tpope/vim-fugitive'         " git support
-Plug 'tpope/vim-rails'            " rails stuffs
-Plug 'tpope/vim-surround'         " easy changing of 'wrapping' characters
 Plug 'vim-ruby/vim-ruby'
-Plug 'tomtom/tcomment_vim'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-rails'
 Plug 'udalov/kotlin-vim'
 Plug 'tfnico/vim-gradle'
-Plug 'kchmck/vim-coffee-script'   " Coffee script syntax highlighting and such
+Plug 'kchmck/vim-coffee-script'
 Plug 'othree/html5.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'mustache/vim-mustache-handlebars'
@@ -39,12 +41,15 @@ Plug 'rhysd/vim-crystal'
 Plug 'voxpupuli/vim-puppet'
 Plug 'hashivim/vim-terraform'
 
+" git support
+Plug 'tpope/vim-fugitive'
+
 " Vimux
-Plug 'benmills/vimux'
-Plug 'drewolson/vimux-maven-test'
-Plug 'drewolson/vimux-elixir-test'
-Plug 'pitluga/vimux-nose-test'
-Plug 'pgr0ss/vimux-ruby-test'
+" Plug 'benmills/vimux'
+" Plug 'drewolson/vimux-maven-test'
+" Plug 'drewolson/vimux-elixir-test'
+" Plug 'pitluga/vimux-nose-test'
+" Plug 'pgr0ss/vimux-ruby-test'
 
 " Color schemes
 Plug 'altercation/vim-colors-solarized'   " solarized
@@ -170,29 +175,9 @@ set listchars=tab:>\
 
 set colorcolumn=81 " 1 past 80...
 
-" markin-downs, gitcommit, hgcommit
-autocmd BufNewFile,BufRead *.md,*.markdown set tw=80
-
 " jquery plugin
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-" go
-au FileType go set noexpandtab ts=4 sw=4 softtabstop=4
-autocmd BufRead,BufNewFile *.go set noexpandtab ts=4 sw=4 softtabstop=4
-
-" python
-au FileType python set ts=4 sw=4 softtabstop=4 expandtab
-autocmd BufRead,BufNewFile *.py set ts=4 sw=4 softtabstop=4 expandtab
-
-" puppet
-au FileType puppet set ts=4 sw=4 softtabstop=4 expandtab
-autocmd BufRead,BufNewFile *.pp set ts=4 sw=4 softtabstop=4 expandtab
-
-" rspec mapping
-nmap \rf :call RunCurrentSpecFile()<CR>
-nmap \rs :call RunNearestSpec()<CR>
-nmap \rl :call RunLastSpec()<CR>
-map \ra :call RunAllSpecs()<CR>
 
 set nofoldenable
 let g:vim_markdown_folding_disabled=1
@@ -206,8 +191,14 @@ if has('gui_running')
     set guifont=Fira\ Mono:h10
     set lines=30
     set columns=120
-    autocmd vimenter * NERDTree
+    " autocmd vimenter * NERDTree
 endif
 
 " vimux stuff
 "let g:VimuxUseNearestPane = 1
+
+" rspec vimux mapping
+" nmap \rf :call RunCurrentSpecFile()<CR>
+" nmap \rs :call RunNearestSpec()<CR>
+" nmap \rl :call RunLastSpec()<CR>
+" map \ra :call RunAllSpecs()<CR>

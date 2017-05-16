@@ -37,6 +37,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rhysd/vim-crystal'
 Plug 'voxpupuli/vim-puppet'
+Plug 'hashivim/vim-terraform'
 
 " Vimux
 Plug 'benmills/vimux'

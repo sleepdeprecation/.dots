@@ -54,9 +54,9 @@ fi
 alias grep='grep --color=auto --exclude-dir=.git --exclude-dir=.hg'
 
 if [[ -x /usr/local/bin/python3 || -x /usr/bin/python3 ]]; then
-	alias httpme='python3 -m http.server'
+	alias pyhttpme='python3 -m http.server'
 elif [[ -x /usr/local/bin/python2 || -x /usr/bin/python2 ]]; then
-	alias httpme='python2 -m SimpleHTTPServer'
+	alias pyhttpme='python2 -m SimpleHTTPServer'
 fi
 
 if [[ -d ~/.cargo ]]; then

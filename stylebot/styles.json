@@ -1,0 +1,91 @@
+{
+    "github.com": {
+        "_enabled": true,
+        "_rules": {
+            "textarea, pre": {
+                "font-family": "\"Source Code Pro\", monospace"
+            }
+        }
+    },
+    "kernelmag.dailydot.com": {
+        "_enabled": true,
+        "_rules": {
+            "div.kernel-article-body-content p": {
+                "line-height": "1.5em"
+            }
+        }
+    },
+    "news.ycombinator.com": {
+        "_enabled": true,
+        "_rules": {
+            "*": {
+                "font-family": "\"Fira Mono\", monospace"
+            },
+            ".comhead": {
+                "font-size": "13px"
+            },
+            ".comment, .dead": {
+                "font-size": "16px"
+            },
+            ".dead": {
+                "color": "#ff4136"
+            },
+            ".pagetop": {
+                "display": "block",
+                "font-size": "16px",
+                "margin-bottom": "10px",
+                "margin-left": "10px",
+                "margin-top": "10px"
+            },
+            ".pagetop b": {
+                "margin-right": "20px"
+            },
+            ".subtext": {
+                "font-size": "13px"
+            },
+            ".title": {
+                "font-size": "16px"
+            },
+            ".yclinks, form": {
+                "font-family": "\"Fira Mono\", monospace"
+            },
+            "body": {
+                "color": "#111",
+                "margin": "0"
+            },
+            "body > center > table > tbody > tr > td > table": {
+                "max-width": "1050px"
+            },
+            "body > center > table > tbody > tr:last-child > td > center": {
+                "max-width": "10500px"
+            },
+            "center > table": {
+                "margin": "0",
+                "width": "100% "
+            },
+            "center > table table": {
+                "padding": "10px "
+            },
+            "center > table table > tr:nth-child(3n)": {
+                "padding": "10px"
+            },
+            "pre, code": {},
+            "table table": {
+                "padding": "12px"
+            }
+        }
+    },
+    "webcache.googleusercontent.com": {
+        "_enabled": true,
+        "_rules": {
+            "body": {
+                "font-family": "\"Source Serif Pro\", serif",
+                "margin": "0 auto",
+                "width": "800px"
+            },
+            "p": {
+                "font-size": "20px"
+            }
+        }
+    }
+}

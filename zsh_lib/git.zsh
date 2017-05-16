@@ -28,3 +28,10 @@ function gigedit() {
 
   $EDITOR ${git_root}/.gitignore
 }
+
+function groot() {
+  local git_root
+  git_root=$(git rev-parse --show-toplevel 2> /dev/null)
+
+  cd $git_root
+}

@@ -17,5 +17,9 @@ function _prompt_git_dirty() {
 	fi
 }
 
-PROMPT='%{$fg[cyan]%}$USER@$HOST%{$reset_color%} | %{$fg[green]%}%~ $(_prompt_git_ref)%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+local bright_yellow=$'\e[93m'
+local short_host=`echo $HOST | cut -d. -f1`
+local me=`whoami`
+
+PROMPT='%{$fg[blue]%}$me%{$fg[cyan]%}@$short_host%{$reset_color%} | %{$bright_yellow%}%~ $(_prompt_git_ref)%{$fg[red]%}%(!.#.»)%{$reset_color%} '
 # RPS1='%{$fg[blue]%}%~ %{$reset_color%} ${return_code}'

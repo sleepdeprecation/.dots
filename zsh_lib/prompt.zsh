@@ -40,7 +40,7 @@ function _prompt_git_remote() {
 }
 
 function _prompt() {
-    echo -n "\n $prompt_prefix  %{$fg[blue]%}$me%{$fg[cyan]%}@$short_host%{$reset_color%} $sep %{$bright_yellow%}%~ %{$fg[red]%}%(!.#.»)%{$reset_color%} "
+    echo -n "\n $prompt_prefix %{$fg[blue]%}$me%{$fg[cyan]%}@$short_host%{$reset_color%} $sep %{$bright_yellow%}%~ %{$fg[red]%}%(!.#.»)%{$reset_color%} "
 }
 
 function _rprompt() {

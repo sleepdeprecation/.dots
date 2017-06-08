@@ -63,3 +63,4 @@ function _prompt_render() {
 }
 
 add-zsh-hook precmd _prompt_render
+PROMPT2="◇ "

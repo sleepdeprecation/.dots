@@ -12,6 +12,9 @@ export LESS="-RFX"
 export PAGER="less"
 export GOPATH=~/go
 
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 if [[ $OS == "Darwin" ]]; then
 	if [[ -d /usr/local/opt/coreutils ]]; then
 		export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -20,7 +23,6 @@ if [[ $OS == "Darwin" ]]; then
 	if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then
 		export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 	fi
-	export LANG=en_US.UTF-8
 fi
 
 if [[ -d /usr/local/heroku ]]; then

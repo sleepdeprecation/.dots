@@ -1,8 +1,8 @@
 # vim: set ft=gitconfig:
 
 [user]
-	email = dkuntz@activecampaign.com
-	name = don
+	email = don@kuntz.co
+	name = Don Kuntz
 [push]
 	default = current
 	followTags = true

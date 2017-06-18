@@ -39,19 +39,57 @@ function _prompt_git_remote() {
     fi
 }
 
-function _prompt() {
-    echo -n "\n $prompt_prefix %{$fg[blue]%}$me%{$fg[cyan]%}@$short_host%{$reset_color%} $sep %{$bright_yellow%}%~ %{$fg[red]%}%(!.#.»)%{$reset_color%} "
+function _prompt_virtualenv() {
+    if [[ "${VIRTUAL_ENV}x" == "x" ]]; then
+        echo -n ""
+        return
+    fi
+
+    local actual_base base
+    actual_base=$(basename "$VIRTUAL_ENV")
+    if [[ $actual_base == "env" ]]; then
+        base=$(basename $(dirname "$VIRTUAL_ENV"))
+    else
+        base=$actual_base
+    fi
+
+    echo -n "%F{108}${base}"
 }
 
-function _rprompt() {
-    echo -n "$(_prompt_git)"
+function _prompt_status() {
+    local git_prompt venv_prompt
+    git_prompt=$(_prompt_git)
+    venv_prompt=$(_prompt_virtualenv)
+
+    if [[ $venv_prompt != "" ]]; then
+        echo -n "${venv_prompt}"
+        if [[ $git_prompt != "" ]]; then
+            echo -n " $sep "
+        fi
+    fi
+
+    if [[ $git_prompt != "" ]]; then
+        echo -n "${git_prompt}"
+    fi
+}
+
+function _prompt() {
+    echo -n "\n $prompt_prefix %{$fg[blue]%}$me%{$fg[cyan]%}@$short_host%{$reset_color%}"
+    local status_prompt
+    status_prompt="$(_prompt_status)"
+    if [[ "$status_prompt" != "" ]]; then
+        echo -n " $sep $status_prompt"
+    fi
+    echo -n "\n"
+
+    echo -n "   %{$bright_yellow%}%~ %{$fg[red]%}%(!.#.»)%{$reset_color%} "
 }
 
 function _prompt_render() {
     if [ $? -eq 0 ]; then
-        prompt_prefix="%F{green}▲"
+        prompt_prefix="%F{green}▲%{$reset_color%}"
     else
-        prompt_prefix="%F{red}△"
+        prompt_prefix="%F{red}△%{$reset_color%}"
     fi
 
     local bright_yellow=$'\e[93m'
@@ -59,8 +97,7 @@ function _prompt_render() {
     local me=`whoami`
 
     PROMPT="$(_prompt)"
-    RPROMPT="$(_rprompt)"
 }
 
 add-zsh-hook precmd _prompt_render
-PROMPT2="◇ "
+PROMPT2=" ◇ "

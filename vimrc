@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 " vim-plug plugins
 Plug 'tpope/vim-sensible'         " sensible defaults
 
-Plug 'scrooloose/syntastic'       " syntax checker
+" Plug 'scrooloose/syntastic'       " syntax checker
 Plug 'ciaranm/detectindent'       " indentation detection like sublime
 
 " file/buffer navigation

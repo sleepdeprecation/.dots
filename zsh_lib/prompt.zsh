@@ -74,7 +74,7 @@ function _prompt_status() {
 }
 
 function _prompt() {
-    echo -n "\n $prompt_prefix %{$fg[blue]%}$me%{$fg[cyan]%}@$short_host%{$reset_color%}"
+    echo -n "\n $prompt_prefix %F{blue}$me%F{cyan}@$short_host%f"
     local status_prompt
     status_prompt="$(_prompt_status)"
     if [[ "$status_prompt" != "" ]]; then
@@ -82,17 +82,16 @@ function _prompt() {
     fi
     echo -n "\n"
 
-    echo -n "   %{$bright_yellow%}%~ %{$fg[red]%}%(!.#.»)%{$reset_color%} "
+    echo -n "   %F{11}%~ %F{red}%(!.#.»)%f "
 }
 
 function _prompt_render() {
     if [ $? -eq 0 ]; then
-        prompt_prefix="%F{green}▲%{$reset_color%}"
+        prompt_prefix="%F{green}▲%f"
     else
-        prompt_prefix="%F{red}△%{$reset_color%}"
+        prompt_prefix="%F{red}△%f"
     fi
 
-    local bright_yellow=$'\e[93m'
     local short_host=`echo $HOST | cut -d. -f1`
     local me=`whoami`
 

@@ -2,21 +2,21 @@ autoload -U colors && colors
 autoload -U add-zsh-hook
 setopt prompt_subst
 
-local sep="%F{242}•%f"
+local sep="%{%F{242}%}•%{%f%}"
 
 function _prompt_git() {
     local ref
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
         ref=$(command git rev-pase --short HEAD 2> /dev/null) || return 0
 
-    echo "%F{246}$(_prompt_git_remote)${ref#refs/heads/}%f $sep $(_prompt_git_status)"
+    echo "%{%F{246}%}$(_prompt_git_remote)${ref#refs/heads/}%{%f%} $sep $(_prompt_git_status)"
 }
 
 function _prompt_git_status() {
     if [[ -n $(command git status --porcelain 2> /dev/null | tail -n1) ]]; then
-        echo "%F{124}⬡ %f"
+        echo "%{%F{124}%}⬡ %{%f%}"
     else
-        echo "%F{70}⬢ %f"
+        echo "%{%F{70}%}⬢ %{%f%}"
     fi
 }
 
@@ -53,7 +53,7 @@ function _prompt_virtualenv() {
         base=$actual_base
     fi
 
-    echo -n "%F{108}${base}"
+    echo -n "%{%F{108}%}${base}%{%f%}"
 }
 
 function _prompt_status() {
@@ -74,7 +74,7 @@ function _prompt_status() {
 }
 
 function _prompt() {
-    echo -n "\n $prompt_prefix %F{blue}$me%F{cyan}@$short_host%f"
+    echo -n "\n $prompt_prefix %{%F{blue}%}$me%{%F{cyan}%}@$short_host%{%f%}"
     local status_prompt
     status_prompt="$(_prompt_status)"
     if [[ "$status_prompt" != "" ]]; then
@@ -82,14 +82,14 @@ function _prompt() {
     fi
     echo -n "\n"
 
-    echo -n "   %F{11}%~ %F{red}%(!.#.»)%f "
+    echo -n "   %{%F{11}%}%~ %{%F{red}%}%(!.#.»)%{%f%} "
 }
 
 function _prompt_render() {
     if [ $? -eq 0 ]; then
-        prompt_prefix="%F{green}▲%f"
+        prompt_prefix="%{%F{green}%}▲%{%f%}"
     else
-        prompt_prefix="%F{red}△%f"
+        prompt_prefix="%{%F{red}%}△%{%f%}"
     fi
 
     local short_host=`echo $HOST | cut -d. -f1`

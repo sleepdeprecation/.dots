@@ -16,7 +16,6 @@ Plug 'braintreeps/bufexplorer'
 Plug 'scrooloose/nerdtree'        " file browser
 
 " intra-buffer nav
-Plug 'Raimondi/delimitMate'       " auto closing of quotes/parens/etc
 Plug 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
 Plug 'tpope/vim-surround'         " easy changing of 'wrapping' characters
 Plug 'tomtom/tcomment_vim'

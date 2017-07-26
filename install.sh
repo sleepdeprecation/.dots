@@ -43,5 +43,8 @@ for item in zshrc zsh_lib vim vimrc gvimrc gitconfig tmux.conf; do
 	fi
 done
 
+# ignore updates to vim/autoload/plug.vim, because i don't care about tracking it in git
+git update-index --assume-unchanged vim/autoload/plug.vim
+
 # install vim plugins
 vim +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall

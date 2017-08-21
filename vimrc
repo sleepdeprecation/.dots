@@ -103,6 +103,9 @@ set encoding=utf-8
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
+" ruby, two spaces, because community convention
+au BufRead,BufNewFile *.rb set tabstop=2 shiftwidth=2 softtabstop=2
+
 " new things from http://statico.github.com/vim.html
 nmap \l :setlocal number!<CR>
 nmap \o :set paste!<CR>

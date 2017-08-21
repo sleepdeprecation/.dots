@@ -26,3 +26,6 @@
 	oneline = log --pretty=format:\"%h %ad%x21%s%x20%x28%an%x29\" --date=short
 
 	#up = "!git stash && git pull --rebase && git stash pop"
+
+[include]
+	path = ~/.gitconfig_local

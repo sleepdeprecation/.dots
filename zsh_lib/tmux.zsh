@@ -5,7 +5,7 @@ alias tmuxjoin='tmux-join'
 alias tmj='tmux-join'
 
 tmux-list() {
-  ps ax -o ruser,command | grep '[n]ew-session -s' | ruby -ne '$_ =~ /^(\w+).*-s (\w+)/; puts "#{$1} started #{$2}"'
+  ps ax -o ruser,command | awk '/[n]ew-session -s/{ print $1 "\t| "$7}'
 }
 alias tmuxlist='tmux-list'
 alias tml='tmux-list'

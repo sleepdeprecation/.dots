@@ -44,18 +44,17 @@ Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-fugitive'
 
 " Color schemes
-Plug 'altercation/vim-colors-solarized'   " solarized
-Plug 'sjl/badwolf'                        " badwolf
+Plug 'sjl/badwolf'
+Plug 'dim13/smyck.vim'
 
 call plug#end()
 
 filetype plugin indent on
 
 " color stuffs
-colorscheme badwolf
-set background=dark
+colorscheme smyck
 set t_Co=256
-let g:badwolf_darkgutter=1
+" set background=dark
 
 " basics
 set number

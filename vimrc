@@ -18,7 +18,7 @@ Plug 'scrooloose/nerdtree'        " file browser
 " intra-buffer nav
 Plug 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
 Plug 'tpope/vim-surround'         " easy changing of 'wrapping' characters
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
 " Plug 'tmhedberg/matchit'
 
@@ -162,8 +162,10 @@ let NERDTreeMapOpenRecursively="+"
 let NERDTreeMapCloseChildren="-"
 let NERDTreeIgnore = ['\.pyc$']
 
-" TComment
-map <localleader>cc :TComment<CR>
+" Commentary
+map <localleader>cc :Commentary<CR>
+" force terraform comments to be #
+autocmd FileType terraform setlocal commentstring=#\ %s
 
 " where new splits open
 set splitbelow

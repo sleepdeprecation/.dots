@@ -43,13 +43,6 @@ Plug 'hashivim/vim-terraform'
 " git support
 Plug 'tpope/vim-fugitive'
 
-" Vimux
-" Plug 'benmills/vimux'
-" Plug 'drewolson/vimux-maven-test'
-" Plug 'drewolson/vimux-elixir-test'
-" Plug 'pitluga/vimux-nose-test'
-" Plug 'pgr0ss/vimux-ruby-test'
-
 " Color schemes
 Plug 'altercation/vim-colors-solarized'   " solarized
 Plug 'sjl/badwolf'                        " badwolf

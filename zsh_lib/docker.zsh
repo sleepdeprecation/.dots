@@ -1,17 +1,18 @@
 function docker-clean-images() {
     images_to_remove=$(docker images -q -f dangling=true)
 
-    if [[ "${images_to_remove}x" != "x" ]]; then
-        docker rmi $images_to_remove
-    fi
+    echo "$images_to_remove" | while IFS= read -r image; do
+        echo "clean $image"
+        docker rmi "$image"
+    done
 }
 
 function docker-clean-containers() {
     containers_to_stop=$(docker ps -a -q -f status=created -f status=exited)
 
-    if [[ "${containers_to_stop}x" != "x" ]]; then
-        docker rm "$containers_to_stop" 
-    fi
+    echo "$containers_to_stop" | while IFS= read -r container; do
+        docker rm "$container"
+    done
 }
 
 function docker-clean() {

@@ -85,15 +85,14 @@ function _prompt() {
     echo -n "   %F{11}%~ %F{red}%(!.#.»)%f "
 }
 
+short_host=`hostname`
+me=`whoami`
 function _prompt_render() {
     if [ $? -eq 0 ]; then
         prompt_prefix="%F{green}▲%f"
     else
         prompt_prefix="%F{red}△%f"
     fi
-
-    local short_host=`echo $HOST | cut -d. -f1`
-    local me=`whoami`
 
     PROMPT="$(_prompt)"
 }

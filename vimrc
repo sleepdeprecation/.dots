@@ -52,7 +52,7 @@ call plug#end()
 filetype plugin indent on
 
 " color stuffs
-colorscheme smyck
+colorscheme badwolf
 set t_Co=256
 " set background=dark
 

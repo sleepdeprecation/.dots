@@ -64,6 +64,7 @@ set history=50
 set ruler
 set autoread
 set linespace=0
+set cursorline
 
 " highlight searches
 set hlsearch

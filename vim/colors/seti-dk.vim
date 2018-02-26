@@ -2,7 +2,7 @@
 " Based off of https://github.com/trusktr/seti.vim
 
 if exists("syntax_on")
-  syntax reset
+syntax reset
 endif
 
 let g:colors_name = "seti-dk"
@@ -43,12 +43,12 @@ hi Function                     ctermfg=74    ctermbg=NONE  cterm=NONE          
 hi Identifier                   ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE
 hi Keyword                      ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi Label                        ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
-hi NonText                      ctermfg=73    ctermbg=0     cterm=NONE          guifg=#abaee8   guibg=#151718   gui=NONE
+hi NonText                      ctermfg=73    ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE
 hi Number                       ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Operator                     ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi PreProc                      ctermfg=197   ctermbg=NONE  cterm=NONE          guifg=#ff026a   guibg=NONE      gui=NONE
 hi Special                      ctermfg=188   ctermbg=NONE  cterm=NONE          guifg=#d4d7d6   guibg=NONE      gui=NONE
-hi SpecialKey                   ctermfg=73    ctermbg=235   cterm=NONE          guifg=#abaee8   guibg=#282a2b   gui=NONE
+hi SpecialKey                   ctermfg=239   ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE
 hi SpellBad                     ctermfg=NONE  ctermbg=NONE  cterm=underline     guifg=NONE      guibg=NONE      gui=underline
 hi Statement                    ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi StorageClass                 ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE

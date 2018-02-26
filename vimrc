@@ -46,15 +46,15 @@ Plug 'tpope/vim-fugitive'
 " Color schemes
 Plug 'sjl/badwolf'
 Plug 'dim13/smyck.vim'
+" Plug 'trusktr/seti.vim'
 
 call plug#end()
 
 filetype plugin indent on
 
 " color stuffs
-colorscheme badwolf
+colorscheme seti-dk
 set t_Co=256
-" set background=dark
 
 " basics
 set number

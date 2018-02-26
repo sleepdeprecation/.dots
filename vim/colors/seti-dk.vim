@@ -9,7 +9,8 @@ let g:colors_name = "seti-dk"
 
 hi Cursor                       ctermfg=16    ctermbg=222   cterm=NONE          guifg=#151718   guibg=#ffe792   gui=NONE
 hi Visual                       ctermfg=NONE  ctermbg=74    cterm=NONE          guifg=NONE      guibg=#4fa5c7   gui=NONE
-hi CursorLine                   ctermfg=NONE  ctermbg=235   cterm=NONE          guifg=NONE      guibg=#282a2b   gui=NONE
+hi CursorLine                   ctermfg=NONE  ctermbg=237   cterm=NONE          guifg=NONE      guibg=#3a3a3a   gui=NONE
+hi CursorLineNR                 ctermfg=155   ctermbg=237   cterm=NONE          guifg=#afff5f   guibg=#3a3a3a   gui=NONE
 hi CursorColumn                 ctermfg=NONE  ctermbg=235   cterm=NONE          guifg=NONE      guibg=#282a2b   gui=NONE
 hi ColorColumn                  ctermfg=NONE  ctermbg=235   cterm=NONE          guifg=NONE      guibg=#282a2b   gui=NONE
 hi LineNr                       ctermfg=243   ctermbg=NONE  cterm=NONE          guifg=#757777   guibg=NONE      gui=NONE
@@ -19,8 +20,8 @@ hi StatusLine                   ctermfg=188   ctermbg=239   cterm=bold          
 hi StatusLineNC                 ctermfg=188   ctermbg=239   cterm=NONE          guifg=#d4d7d6   guibg=#4c4f4f   gui=NONE
 hi Pmenu                        ctermfg=NONE  ctermbg=NONE  cterm=NONE          guifg=NONE      guibg=NONE      gui=NONE
 hi PmenuSel                     ctermfg=NONE  ctermbg=74    cterm=NONE          guifg=NONE      guibg=#4fa5c7   gui=NONE
-hi IncSearch                    ctermfg=16    ctermbg=74    cterm=NONE          guifg=#151718   guibg=#55b5db   gui=NONE
-hi Search                       ctermfg=NONE  ctermbg=NONE  cterm=underline     guifg=NONE      guibg=NONE      gui=underline
+hi IncSearch                    ctermfg=234   ctermbg=155   cterm=bold          guifg=#1c1c1c   guibg=#afff5f   gui=bold
+hi Search                       ctermfg=234   ctermbg=155   cterm=bold          guifg=#1c1c1c   guibg=#afff5f   gui=bold
 hi Directory                    ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Folded                       ctermfg=59    ctermbg=16    cterm=NONE          guifg=#41535b   guibg=#151718   gui=NONE
 

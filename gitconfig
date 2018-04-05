@@ -9,6 +9,7 @@
 [pull]
 	rebase = true
 	default = current
+	autoStash = true
 [merge]
 	ff = only
 [color]

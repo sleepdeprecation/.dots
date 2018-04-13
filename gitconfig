@@ -9,6 +9,7 @@
 [pull]
 	rebase = true
 	default = current
+[rebase]
 	autoStash = true
 [merge]
 	ff = only
@@ -26,7 +27,9 @@
 	longlog = log --format='%C(yellow)%h%Creset by %C(cyan)%an%Creset, %C(magenta)%ar%Creset | %s %d (%ad)' --date=short --graph
 	oneline = log --pretty=format:\"%h %ad%x21%s%x20%x28%an%x29\" --date=short
 
-	#up = "!git stash && git pull --rebase && git stash pop"
+	egrep = grep -E
+	fgrep = grep -F
+
 
 [include]
 	path = ~/.gitconfig_local

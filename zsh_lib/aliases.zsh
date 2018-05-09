@@ -16,3 +16,13 @@ ecr-login() {
 
   $(env AWS_PROFILE="$profile" aws ecr get-login --no-include-email --region us-east-1)
 }
+
+amis() {
+  if [[ ! -z "$1" ]]; then
+    output=$(env AWS_PROFILE=prod-admin aws ec2 describe-images --owners self --filters Name=tag:ami_name,Values=$1)
+  else
+    output=$(env AWS_PROFILE=prod-admin aws ec2 describe-images --owners self)
+  fi
+
+  echo "$output" | jq '.Images | [.[] | (.Tags | .[] | select(.Key == "ami_name") | .Value) as $name | (.Tags | .[] | select(.Key == "ami_version") | .Value) as $version | .ImageId as $id | {($name): {($version): $id}}] | reduce .[] as $n ({}; . * $n)'
+}

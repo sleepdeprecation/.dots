@@ -8,12 +8,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'         " sensible defaults
 
 " Plug 'scrooloose/syntastic'       " syntax checker
-Plug 'ciaranm/detectindent'       " indentation detection like sublime
+" Plug 'ciaranm/detectindent'       " indentation detection like sublime
+Plug 'tpope/vim-sleuth'
 
 " file/buffer navigation
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'braintreeps/bufexplorer'
 Plug 'scrooloose/nerdtree'        " file browser
+Plug 'vimtaku/hl_matchit.vim'
 
 " intra-buffer nav
 Plug 'tpope/vim-endwise'          " auto insertion of `end` keyword in ruby
@@ -92,12 +94,15 @@ set smarttab
 set laststatus=2
 set encoding=utf-8
 
+" Automatic tab detection
+let g:sleuth_automatic = 0
+
 " syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " ruby, two spaces, because community convention
-au BufRead,BufNewFile *.rb set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby setlocal softtabstop=2 | setlocal shiftwidth=2 | setlocal tabstop=2
 
 " new things from http://statico.github.com/vim.html
 nmap \l :setlocal number!<CR>
@@ -124,10 +129,6 @@ nmap <C-e> :e#<CR>
 nmap \n :bnext<CR>
 nmap \p :bprev<CR>
 
-" Automatic tab detection
-autocmd BufReadPost * :DetectIndent
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 4
 
 " ctrl-p stuffs
 let g:ctrlp_map = '<leader>ff'
@@ -160,6 +161,10 @@ map <localleader>cc :Commentary<CR>
 " force terraform comments to be #
 autocmd FileType terraform setlocal commentstring=#\ %s
 
+" highlight matchit
+map <localleader>h :HiMatchOn<CR>
+map <localleader>hh :HiMatchOff<CR>
+
 " where new splits open
 set splitbelow
 set splitright
@@ -171,10 +176,6 @@ set list
 set listchars=tab:>\ 
 
 set colorcolumn=81 " 1 past 80...
-
-" jquery plugin
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
 
 set nofoldenable
 let g:vim_markdown_folding_disabled=1

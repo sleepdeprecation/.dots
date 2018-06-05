@@ -2,7 +2,8 @@ autoload -U colors && colors
 autoload -U add-zsh-hook
 setopt prompt_subst
 
-local sep="%F{242}•%f"
+local light="242"
+local sep="%F{$light}•%f"
 
 function _prompt_git() {
     local ref
@@ -53,16 +54,36 @@ function _prompt_virtualenv() {
         base=$actual_base
     fi
 
-    echo -n "%F{108}${base}"
+    echo -n "%F{$light}py:%F{114}${base}"
+}
+
+function _prompt_terraform_workspace() {
+    if [[ ! -d .terraform ]]; then
+        echo -n ""
+        return
+    fi
+
+    local workspace
+    workspace=$(terraform workspace show)
+
+    echo -n "%F{$light}tf:%F{068}$workspace"
 }
 
 function _prompt_status() {
-    local git_prompt venv_prompt
+    local git_prompt venv_prompt tf_prompt
     git_prompt=$(_prompt_git)
     venv_prompt=$(_prompt_virtualenv)
+    tf_prompt=$(_prompt_terraform_workspace)
 
     if [[ $venv_prompt != "" ]]; then
         echo -n "${venv_prompt}"
+        if [[ $git_prompt != "" || $tf_prompt != "" ]]; then
+            echo -n " $sep "
+        fi
+    fi
+
+    if [[ $tf_prompt != "" ]]; then
+        echo -n "${tf_prompt}"
         if [[ $git_prompt != "" ]]; then
             echo -n " $sep "
         fi

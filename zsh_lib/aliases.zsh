@@ -18,10 +18,16 @@ ecr-login() {
 }
 
 amis() {
-  if [[ ! -z "$1" ]]; then
-    output=$(env AWS_PROFILE=prod-admin aws ec2 describe-images --owners self --filters Name=tag:ami_name,Values=$1)
+  if [[ ! -z $AWS_PROFILE ]]; then
+    profile="$AWS_PROFILE"
   else
-    output=$(env AWS_PROFILE=prod-admin aws ec2 describe-images --owners self)
+    profile="prod-admin"
+  fi
+
+  if [[ ! -z "$1" ]]; then
+    output=$(env AWS_PROFILE="$profile" aws ec2 describe-images --owners self --filters Name=tag:ami_name,Values=$1)
+  else
+    output=$(env AWS_PROFILE="$profile" aws ec2 describe-images --owners self)
   fi
 
   echo "$output" | jq '.Images | [.[] | (.Tags | .[] | select(.Key == "ami_name") | .Value) as $name | (.Tags | .[] | select(.Key == "ami_version") | .Value) as $version | .ImageId as $id | {($name): {($version): $id}}] | reduce .[] as $n ({}; . * $n)'

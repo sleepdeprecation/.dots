@@ -1,6 +1,6 @@
 OS=`uname -s`
-if [[ -d $HOME/.zsh_lib ]]; then
-	for config_file ($HOME/.zsh_lib/*.zsh); do
+if [[ -d $HOME/.zsh-lib ]]; then
+	for config_file ($HOME/.zsh-lib/*.zsh); do
 		source $config_file
 	done
 

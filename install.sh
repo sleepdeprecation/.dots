@@ -24,7 +24,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # link items in home so they're, y'know, actually used
-for item in zshrc zsh_lib vim vimrc gvimrc gitconfig tmux.conf; do
+for item in zshrc zsh-lib vim vimrc gvimrc gitconfig tmux.conf; do
 	dest="$HOME/.$item"
 	source="$DOTSTUFFDIR/$item"
 

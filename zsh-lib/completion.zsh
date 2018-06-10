@@ -20,3 +20,5 @@ setopt list_rows_first
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ''
+
+fpath=(/usr/local/share/zsh-completions $fpath)

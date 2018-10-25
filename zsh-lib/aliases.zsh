@@ -1,5 +1,6 @@
 alias reload-shell="source $HOME/.zshrc"
 alias rezsh="source $HOME/.zshrc"
+alias tf="terraform"
 
 title() {
   echo -ne "\033]0;"$*"\007"
@@ -24,11 +25,15 @@ amis() {
     profile="prod-admin"
   fi
 
+
+
   if [[ ! -z "$1" ]]; then
-    output=$(env AWS_PROFILE="$profile" aws ec2 describe-images --owners self --filters Name=tag:ami_name,Values=$1)
+    name="$1"
   else
-    output=$(env AWS_PROFILE="$profile" aws ec2 describe-images --owners self)
+    name="*"
   fi
 
-  echo "$output" | jq '.Images | [.[] | (.Tags | .[] | select(.Key == "ami_name") | .Value) as $name | (.Tags | .[] | select(.Key == "ami_version") | .Value) as $version | .ImageId as $id | {($name): {($version): $id}}] | reduce .[] as $n ({}; . * $n)'
+  output=$(env AWS_PROFILE="$profile" aws ec2 describe-images --owners self --filters Name=tag:ami_name,Values=$name)
+
+  echo "$output" | jq -S '.Images | [.[] | (.Tags | .[] | select(.Key == "ami_name") | .Value) as $name | (.Tags | .[] | select(.Key == "ami_version") | .Value) as $version | .ImageId as $id | {($name): {($version): $id}}] | reduce .[] as $n ({}; . * $n)'
 }

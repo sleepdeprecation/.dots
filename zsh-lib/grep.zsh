@@ -4,5 +4,5 @@ function dirgrep() {
         exit 1
     fi
 
-    grep -r $@ .
+    grep -r $@ . | grep -v -e .git -e .terraform -e tfstate
 }

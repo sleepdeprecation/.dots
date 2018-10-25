@@ -1,22 +1,47 @@
 function venv() {
-  local env_dir use_py
-  if [[ ! -z $1 ]]; then
-    env_dir=$1
-  else
-    env_dir="env"
-  fi
+  local opts create_env pyversion use_venv
 
-  if [[ ! -d "$PWD/env" ]]; then
-    echo "Creating new virtualenv in \`env\`."
-    echo -n "Which python should be used [python3]: "
-    read use_py
+  typeset -A opts
+  opts=(
+    "-d" "env"
+    "-p" "python3"
+  )
 
-    if [[ -z $use_py ]]; then
-      use_py="python3"
+  zparseopts -K -E -A opts -- p: d: c=create_env
+
+  pyversion=$opts[-p]
+  env_dir=$opts[-d]
+
+  if [[ ! -d "${opts[-d]}" ]]; then
+    if [[ "$create_env" == "" ]]; then
+      echo -n "venv doesn't exist, create it? [yN]: "
+      read create_env
+      create_env=$(echo $create_env | cut -c1)
+
+      if [[ "$create_env" != "y" ]]; then
+        echo "not creating env."
+        return 1
+      fi
     fi
 
-    virtualenv -p $use_py $env_dir
+    pyversion=$($opts[-p] --version 2>&1 | cut -c8-)
+
+    use_venv=1
+
+    # check major version
+    if [[ $(echo "$pyversion" | cut -d'.' -f1) -ge 3 ]]; then
+      # check minor version
+      if [[ $(echo "$pyversion" | cut -d'.' -f2) -ge 3 ]]; then
+        use_venv=0
+      fi
+    fi
+
+    if [[ "$use_venv" -eq 0 ]]; then
+      ${opts[-p]} -m venv "${opts[-d]}"
+    else
+      virtualenv -p "${opts[-p]}" "${opts[-d]}"
+    fi
   fi
 
-  source $PWD/env/bin/activate
+  source "$PWD/${opts[-d]}/bin/activate"
 }

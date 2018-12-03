@@ -43,10 +43,19 @@ for item in zshrc zsh-lib vim vimrc gvimrc gitconfig tmux.conf; do
 	fi
 done
 
+# make bin dir
+if [ ! -d "$HOME/bin" ]; then
+    mkdir -p "$HOME/bin"
+fi
+
+# link items in bin to bin
+for item in "$DOTSTUFFDIR/bin/*"; do
+    bn=$(basename "$item")
+    ln -s "$item" "$HOME/bin/$bn"
+done
+
 # if go is installed, install httpme utility
 if [[ `which go > /dev/null; echo $?` == 0 ]]; then
-	# create $HOME/bin
-	mkdir -p "$HOME/bin"
 	go build -o "$HOME/bin/httpme" "$DOTSTUFFDIR/gobin/httpme.go"
 fi
 

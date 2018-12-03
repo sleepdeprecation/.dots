@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$1x" == "x" ]]; then
+    echo "$0 <terraform-name>"
+
+    exit 1
+fi
+
+instance_ip=$(terraform state show "aws_instance.$1" | grep -w public_ip | awk '{print $3}')
+ssh $instance_ip

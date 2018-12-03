@@ -1,6 +1,5 @@
 alias reload-shell="source $HOME/.zshrc"
 alias rezsh="source $HOME/.zshrc"
-alias tf="terraform"
 
 title() {
   echo -ne "\033]0;"$*"\007"

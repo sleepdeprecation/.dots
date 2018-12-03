@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ "$1" == "stag" || "$1" == "staging" ]]; then
+    shift
+    terraform workspace select staging $@
+elif [[ "$1" == "prod" || "$1" == "production" || "$1" == "default" ]]; then
+    shift
+    terraform workspace select default $@
+elif [[ "$1" == "upgrade" ]]; then
+    shift
+    terraform init -upgrade
+else
+    terraform $@
+fi
+

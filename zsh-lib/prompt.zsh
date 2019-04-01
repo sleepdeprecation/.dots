@@ -48,10 +48,10 @@ function _prompt_virtualenv() {
 
     local actual_base base
     actual_base=$(basename "$VIRTUAL_ENV")
-    if [[ $actual_base == "env" ]]; then
+    if [[ "$actual_base" == "env" || "$actual_base" == "venv" ]]; then
         base=$(basename $(dirname "$VIRTUAL_ENV"))
     else
-        base=$actual_base
+        base="$actual_base"
     fi
 
     echo -n "%F{$light}py:%F{114}${base}"

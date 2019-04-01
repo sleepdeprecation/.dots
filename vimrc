@@ -161,6 +161,9 @@ map <localleader>cc :Commentary<CR>
 " force terraform comments to be #
 autocmd FileType terraform setlocal commentstring=#\ %s
 
+" run terraform format on save
+let g:terraform_fmt_on_save=1
+
 " highlight matchit
 map <localleader>h :HiMatchOn<CR>
 map <localleader>hh :HiMatchOff<CR>

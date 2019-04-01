@@ -9,6 +9,9 @@ elif [[ "$1" == "prod" || "$1" == "production" || "$1" == "default" ]]; then
 elif [[ "$1" == "upgrade" ]]; then
     shift
     terraform init -upgrade
+elif [[ "$1" == "workspaces" ]]; then
+    shift
+    terraform workspace list $@
 else
     terraform $@
 fi

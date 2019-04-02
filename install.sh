@@ -23,41 +23,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
     rm -rf "$HOME/.oh-my-zsh"
 fi
 
-# link items in home so they're, y'know, actually used
-for item in zshrc zsh-lib vim vimrc gvimrc gitconfig tmux.conf; do
-	dest="$HOME/.$item"
-	source="$DOTSTUFFDIR/$item"
-
-	if [ -h "$dest" ]; then
-		if [ ! `readlink "$dest"` -ef "$source" ]; then
-			rm -f "$dest"
-			ln -s -f "$source" "$dest"
-		fi
-	else
-		if [ -d "$dest" ]; then
-			rm -rf "$dest"
-		else
-			rm -f "$dest"
-		fi
-		ln -s -f "$source" "$dest"
-	fi
-done
-
-# make bin dir
-if [ ! -d "$HOME/bin" ]; then
-    mkdir -p "$HOME/bin"
-fi
-
-# link items in bin to bin
-for item in "$DOTSTUFFDIR/bin/*"; do
-    bn=$(basename "$item")
-    ln -s "$item" "$HOME/bin/$bn"
-done
-
-# if go is installed, install httpme utility
-if [[ `which go > /dev/null; echo $?` == 0 ]]; then
-	go build -o "$HOME/bin/httpme" "$DOTSTUFFDIR/gobin/httpme.go"
-fi
+. install/relink.sh
 
 # ignore updates to vim/autoload/plug.vim, because i don't care about tracking it in git
 git update-index --assume-unchanged vim/autoload/plug.vim

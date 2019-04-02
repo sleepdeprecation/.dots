@@ -18,19 +18,23 @@ export LC_ALL=en_US.UTF-8
 
 if [[ $OS == "Darwin" ]]; then
 	if [[ -d /usr/local/opt/coreutils ]]; then
-		export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+		export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	fi
 
 	if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then
-		export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+		export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 	fi
+
+	if [[ -d "$HOME/Library/Python/2.7/bin" ]]; then
+        export PATH="$PATH:/$HOME/Library/Python/2.7/bin"
+    fi
 fi
 
 if [[ -d /usr/local/heroku ]]; then
 	export PATH="/usr/local/heroku/bin:$PATH"
 fi
 
-export PATH=$HOME/bin:/usr/local/sbin:$PATH:$GOPATH/bin
+export PATH="$HOME/bin:/usr/local/sbin:$PATH:$GOPATH/bin"
 
 alias pacman='sudo pacman'
 alias apt-get='sudo apt-get'

@@ -66,6 +66,11 @@ elif [[ -x /usr/local/bin/python2 || -x /usr/bin/python2 ]]; then
 	alias pyhttpme='python2 -m SimpleHTTPServer'
 fi
 
+# enable kubectl completion
+if [ $commands[kubectl] ]; then
+    source <(kubectl completion zsh)
+fi
+
 if [[ -d ~/.cargo ]]; then
 	# for rustup
 	source ~/.cargo/env

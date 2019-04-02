@@ -39,7 +39,7 @@ func main() {
 		Handler: newMux(serve_dir),
 	}
 
-	fmt.Printf("Serving %s on port %d\n", serve_dir, *port)
+	fmt.Printf("Serving %s on  http://0.0.0.0:%d\n", serve_dir, *port)
 	log.Fatal(server.ListenAndServe())
 }
 

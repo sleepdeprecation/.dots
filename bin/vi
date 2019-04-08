@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# is neovim installed?
+nvim=`command -v nvim`
+if [[ "${nvim}x" == "x" ]]; then
+    $nvim "$@"
+else
+    vim "$@"
+fi

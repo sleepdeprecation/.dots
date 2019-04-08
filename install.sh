@@ -1,6 +1,6 @@
 # make sure zsh is installed before continuing
 zsh=`command -v zsh`
-if [ "${zsh}x" = "x" ]; then
+if [[ "${zsh}x" == "x" ]]; then
 	echo "Install zsh before continuing"
 	exit 1
 fi

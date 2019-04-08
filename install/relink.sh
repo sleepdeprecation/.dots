@@ -32,6 +32,9 @@ for item in zshrc zsh-lib vim vimrc gvimrc gitconfig tmux.conf; do
     dklink "$source" "$dest"
 done
 
+# link nvim config because it's nonstandard
+dklink "$DOTSTUFFDIR/nvim" "$HOME/.config/nvim"
+
 # make bin dir
 if [ ! -d "$HOME/bin" ]; then
     mkdir -p "$HOME/bin"

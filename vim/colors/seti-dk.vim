@@ -29,9 +29,9 @@ hi Normal                       ctermfg=188   ctermbg=NONE  cterm=NONE          
 hi Boolean                      ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Character                    ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Comment                      ctermfg=66    ctermbg=NONE  cterm=NONE          guifg=#5f8787   guibg=NONE      gui=NONE
-hi Conditional                  ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
+hi Conditional                  ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=italic
 hi Constant                     ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
-hi Define                       ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
+hi Define                       ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=NONE
 hi DiffAdd                      ctermfg=188   ctermbg=64    cterm=bold          guifg=#d4d7d6   guibg=#43800a   gui=bold
 hi DiffDelete                   ctermfg=88    ctermbg=NONE  cterm=NONE          guifg=#870505   guibg=NONE      gui=NONE
 hi DiffChange                   ctermfg=188   ctermbg=23    cterm=NONE          guifg=#d4d7d6   guibg=#1a3150   gui=NONE
@@ -45,12 +45,12 @@ hi Keyword                      ctermfg=149   ctermbg=NONE  cterm=NONE          
 hi Label                        ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
 hi NonText                      ctermfg=73    ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE
 hi Number                       ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
-hi Operator                     ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
+hi Operator                     ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=italic
 hi PreProc                      ctermfg=197   ctermbg=NONE  cterm=NONE          guifg=#ff026a   guibg=NONE      gui=NONE
 hi Special                      ctermfg=188   ctermbg=NONE  cterm=NONE          guifg=#d4d7d6   guibg=NONE      gui=NONE
 hi SpecialKey                   ctermfg=239   ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE
 hi SpellBad                     ctermfg=NONE  ctermbg=NONE  cterm=underline     guifg=NONE      guibg=NONE      gui=underline
-hi Statement                    ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
+hi Statement                    ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=italic
 hi StorageClass                 ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE
 hi String                       ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
 hi Tag                          ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
@@ -66,7 +66,7 @@ hi rubySymbol                   ctermfg=167   ctermbg=NONE  cterm=NONE          
 hi rubyConstant                 ctermfg=140   ctermbg=NONE  cterm=NONE          guifg=#a074c4   guibg=NONE      gui=NONE
 hi rubyStringDelimiter          ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
 hi rubyBlockParameter           ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
-hi rubyInstanceVariable         ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=italic
+hi rubyInstanceVariable         ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=italic
 hi rubyInclude                  ctermfg=197   ctermbg=NONE  cterm=NONE          guifg=#ff026a   guibg=NONE      gui=NONE
 hi rubyGlobalVariable           ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi rubyRegexp                   ctermfg=215   ctermbg=NONE  cterm=NONE          guifg=#ffb454   guibg=NONE      gui=NONE
@@ -76,7 +76,7 @@ hi rubyControl                  ctermfg=149   ctermbg=NONE  cterm=NONE          
 hi rubyClassVariable            ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE
 hi rubyOperator                 ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi rubyException                ctermfg=197   ctermbg=NONE  cterm=NONE          guifg=#ff026a   guibg=NONE      gui=NONE
-hi rubyPseudoVariable           ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=italic
+hi rubyPseudoVariable           ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=italic
 hi rubyRailsUserClass           ctermfg=140   ctermbg=NONE  cterm=NONE          guifg=#a074c4   guibg=NONE      gui=NONE
 hi rubyRailsARAssociationMethod ctermfg=140   ctermbg=NONE  cterm=NONE          guifg=#a074c4   guibg=NONE      gui=NONE
 hi rubyRailsARMethod            ctermfg=140   ctermbg=NONE  cterm=NONE          guifg=#a074c4   guibg=NONE      gui=NONE

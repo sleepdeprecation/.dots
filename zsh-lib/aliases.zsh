@@ -1,3 +1,6 @@
+autoload -U compaudit compinit
+compinit
+
 alias reload-shell="source $HOME/.zshrc"
 alias rezsh="source $HOME/.zshrc"
 

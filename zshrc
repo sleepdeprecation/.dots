@@ -7,7 +7,12 @@ if [[ -d $HOME/.zsh-lib ]]; then
 	unset config_file
 fi
 
-export EDITOR="vim"
+nvim=`command -v nvim`
+if [[ "${nvim}x" != "x" ]]; then
+  export EDITOR="nvim"
+else
+  export EDITOR="vim"
+fi
 export LESS="-RFX"
 export PAGER="less"
 export GOPATH=~/go

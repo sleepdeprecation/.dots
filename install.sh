@@ -25,9 +25,4 @@ fi
 
 . install/relink.sh
 . install/terminfo.sh
-
-# ignore updates to vim/autoload/plug.vim, because i don't care about tracking it in git
-git update-index --assume-unchanged vim/autoload/plug.vim
-
-# install vim plugins
-vim +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall
+. install/vim.sh

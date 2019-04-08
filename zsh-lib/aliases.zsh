@@ -1,6 +1,17 @@
 alias reload-shell="source $HOME/.zshrc"
 alias rezsh="source $HOME/.zshrc"
 
+nvim=`command -v nvim`
+if [[ "${nvim}x" != "x" ]]; then
+  local vim_path=`command -v vim`
+
+  alias vim=nvim
+  alias vi=nvim
+  alias nvi=nvim
+
+  compdef nvim vim vi nvi
+fi
+
 title() {
   echo -ne "\033]0;"$*"\007"
 }

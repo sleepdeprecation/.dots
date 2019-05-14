@@ -17,10 +17,12 @@ Plug 'tpope/vim-surround' " easy changing of 'wrapping' characters
 Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
 
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
 Plug 'hashivim/vim-terraform'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'ekalinin/Dockerfile.vim'
 
 Plug 'tpope/vim-fugitive'
 
@@ -68,6 +70,13 @@ set smartindent
 
 set encoding=utf-8
 
+set spell
+set wrap
+set linebreak
+set list
+set listchars=tab:>\ 
+
+
 " syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
 
@@ -102,7 +111,7 @@ let g:vim_markdown_emphasis_multiline = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_auto_indent_bullets = 0
-set conceallevel=2
+autocmd FileType markdown setlocal conceallevel=2
 
 " vim ruby
 let g:ruby_indent_access_modifier_style = 'indent'
@@ -111,7 +120,7 @@ let g:ruby_indent_block_style = 'do'
 " vim terraform
 let g:terraform_fmt_on_save = 1
 let g:terraform_commentstring = '#\ %s'
-"autocmd FileType terraform setlocal commentstring=#\ %s
+autocmd FileType terraform setlocal commentstring=#\ %s
 
 " Commentary
 map <localleader>cc :Commentary<CR>

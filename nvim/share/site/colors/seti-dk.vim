@@ -43,7 +43,7 @@ hi Function                     ctermfg=74    ctermbg=NONE  cterm=NONE          
 hi Identifier                   ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE
 hi Keyword                      ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi Label                        ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
-hi NonText                      ctermfg=73    ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE
+hi NonText                      ctermfg=238   ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE
 hi Number                       ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Operator                     ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=italic
 hi PreProc                      ctermfg=197   ctermbg=NONE  cterm=NONE          guifg=#ff026a   guibg=NONE      gui=NONE

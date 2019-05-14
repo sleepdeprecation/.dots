@@ -7,8 +7,8 @@ zmodload -F zsh/terminfo +b:echoti +p:terminfo
 typeset -gA key_info
 key_info=(
   'Control'      '\C-'
-  'ControlLeft'  '\e[1;5D \e[5D \e\e[D \eOd \eOD'
-  'ControlRight' '\e[1;5C \e[5C \e\e[C \eOc \eOC'
+  'ControlLeft'  '\e[1;5D \e[5D \e\e[D \eOd \eOD '
+  'ControlRight' '\e[1;5C \e[5C \e\e[C \eOc \eOC '
   'Escape'       '\e'
   'Meta'         '\M-'
   'Backspace'    ${terminfo[kbs]}
@@ -39,9 +39,9 @@ key_info=(
 
 bindkey -e
 
-local key
-for key (${(s: :)key_info[ControlLeft]}) bindkey ${key} backward-word
-for key (${(s: :)key_info[ControlRight]}) bindkey ${key} forward-word
+# local key
+# for key (${(s: :)key_info[ControlLeft]}) bindkey ${key} backward-word
+# for key (${(s: :)key_info[ControlRight]}) bindkey ${key} forward-word
 
 bindkey '^r' history-incremental-search-backward
 

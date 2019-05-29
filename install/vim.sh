@@ -43,5 +43,11 @@ dklink "$DOTSTUFFDIR/nvim/share" "$HOME/.local/share/nvim"
 git update-index --assume-unchanged vim/autoload/plug.vim
 git update-index --assume-unchanged nvim/share/site/autoload/plug.vim
 
+nvim=`command -v nvim`
+if [[ "${nvim}x" != "x" ]]; then
+    vi_cmd=nvim
+else
+    vi_cmd=\vim
+fi
 # install vim plugins
-vim +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall
+$vi_cmd +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall

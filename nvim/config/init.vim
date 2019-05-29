@@ -42,6 +42,10 @@ set history=50
 "set colorcolumn=81
 set autoread
 set cursorline
+set spell
+set spelllang=en
+set wrap
+set linebreak
 
 set splitbelow
 set splitright

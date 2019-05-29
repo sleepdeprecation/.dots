@@ -29,10 +29,6 @@ if [[ $OS == "Darwin" ]]; then
 	if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then
 		export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 	fi
-
-	if [[ -d "$HOME/Library/Python/2.7/bin" ]]; then
-        export PATH="$PATH:/$HOME/Library/Python/2.7/bin"
-    fi
 fi
 
 if [[ -d /usr/local/heroku ]]; then

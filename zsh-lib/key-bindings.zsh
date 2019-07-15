@@ -42,6 +42,8 @@ bindkey -e
 # local key
 # for key (${(s: :)key_info[ControlLeft]}) bindkey ${key} backward-word
 # for key (${(s: :)key_info[ControlRight]}) bindkey ${key} forward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 bindkey '^r' history-incremental-search-backward
 

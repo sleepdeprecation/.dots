@@ -30,7 +30,11 @@
 	egrep = grep -E
 	fgrep = grep -F
 
-    undo-commit = reset --soft HEAD~1
+	undo-commit = reset --soft HEAD~1
 
 [include]
 	path = ~/.gitconfig_local
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2

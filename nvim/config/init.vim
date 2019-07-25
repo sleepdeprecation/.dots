@@ -115,7 +115,7 @@ let g:vim_markdown_emphasis_multiline = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_auto_indent_bullets = 0
-autocmd FileType markdown setlocal conceallevel=2
+autocmd FileType markdown setlocal conceallevel=0
 
 " vim ruby
 let g:ruby_indent_access_modifier_style = 'indent'

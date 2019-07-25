@@ -21,7 +21,13 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+if (( $+commands[python3] )); then
+    local userbase=$(python3 -c 'import site; print(site.USER_BASE)')
+    export PATH="$userbase/bin:$PATH"
+fi
+
 if [[ $OS == "Darwin" ]]; then
+
 	if [[ -d /usr/local/opt/coreutils ]]; then
 		export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	fi
@@ -31,11 +37,7 @@ if [[ $OS == "Darwin" ]]; then
 	fi
 fi
 
-if [[ -d /usr/local/heroku ]]; then
-	export PATH="/usr/local/heroku/bin:$PATH"
-fi
-
-export PATH="$HOME/bin:/usr/local/sbin:$PATH:$GOPATH/bin"
+export PATH="$HOME/bin:/usr/local/sbin:$PATH"
 
 alias pacman='sudo pacman'
 alias apt-get='sudo apt-get'
@@ -86,3 +88,5 @@ if [ -f "$HOME/.gcloud/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.gcloud/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi
+
+export GPG_TTY=$(tty)

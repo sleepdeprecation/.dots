@@ -1,3 +1,5 @@
+ZSH_DISABLE_COMPFIX="true"
+
 autoload -U compaudit compinit
 compinit
 

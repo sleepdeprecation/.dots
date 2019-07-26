@@ -1,17 +1,17 @@
 OS=`uname -s`
 if [[ -d $HOME/.zsh-lib ]]; then
-	for config_file ($HOME/.zsh-lib/*.zsh); do
-		source $config_file
-	done
+    for config_file ($HOME/.zsh-lib/*.zsh); do
+        source $config_file
+    done
 
-	unset config_file
+    unset config_file
 fi
 
 nvim=`command -v nvim`
 if [[ "${nvim}x" != "x" ]]; then
-  export EDITOR="nvim"
+    export EDITOR="nvim"
 else
-  export EDITOR="vim"
+    export EDITOR="vim"
 fi
 export LESS="-RFX"
 export PAGER="less"
@@ -29,13 +29,14 @@ fi
 export GPG_TTY=$(tty)
 
 if [[ $OS == "Darwin" ]]; then
-	if [[ -d /usr/local/opt/coreutils ]]; then
-		export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-	fi
 
-	if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then
-		export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
-	fi
+    if [[ -d /usr/local/opt/coreutils ]]; then
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    fi
+
+    if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then
+        export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+    fi
 fi
 
 export PATH="$HOME/bin:/usr/local/sbin:$PATH"
@@ -53,21 +54,21 @@ alias be="bundle exec"
 
 # color aliases
 if [[ $OS == "Darwin" ]]; then
-	if [[ -x /usr/local/opt/coreutils/libexec/gnubin/ls ]]; then
-		alias ls='ls -pFN --color=auto'
-	else
-		alias ls='ls -pFG'
-	fi
+    if [[ -x /usr/local/opt/coreutils/libexec/gnubin/ls ]]; then
+        alias ls='ls -pFN --color=auto'
+    else
+        alias ls='ls -pFG'
+    fi
 elif [[ $OS == "Linux" ]]; then
-	alias ls='ls -pFN --color=auto';
+    alias ls='ls -pFN --color=auto';
 fi
 
 alias grep='grep --color=auto --exclude-dir=.git --exclude-dir=.hg'
 
 if [[ -x /usr/local/bin/python3 || -x /usr/bin/python3 ]]; then
-	alias pyhttpme='python3 -m http.server'
+    alias pyhttpme='python3 -m http.server'
 elif [[ -x /usr/local/bin/python2 || -x /usr/bin/python2 ]]; then
-	alias pyhttpme='python2 -m SimpleHTTPServer'
+    alias pyhttpme='python2 -m SimpleHTTPServer'
 fi
 
 # enable kubectl completion
@@ -76,12 +77,12 @@ if [ $commands[kubectl] ]; then
 fi
 
 if [[ -d ~/.cargo ]]; then
-	# for rustup
-	source ~/.cargo/env
+    # for rustup
+    source ~/.cargo/env
 fi
 
 if [ -f ~/.local_profile ]; then
-	source ~/.local_profile
+    source ~/.local_profile
 fi
 
 # The next line updates PATH for the Google Cloud SDK.

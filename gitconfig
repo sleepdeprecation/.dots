@@ -3,6 +3,7 @@
 [user]
 	email = don@kuntz.co
 	name = Don Kuntz
+	signingkey = EBA7AEF98657FB2E
 [push]
 	default = current
 	followTags = true

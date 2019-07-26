@@ -26,8 +26,9 @@ if (( $+commands[python3] )); then
     export PATH="$userbase/bin:$PATH"
 fi
 
-if [[ $OS == "Darwin" ]]; then
+export GPG_TTY=$(tty)
 
+if [[ $OS == "Darwin" ]]; then
 	if [[ -d /usr/local/opt/coreutils ]]; then
 		export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	fi
@@ -88,5 +89,3 @@ if [ -f "$HOME/.gcloud/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.gcloud/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi
-
-export GPG_TTY=$(tty)

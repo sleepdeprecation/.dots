@@ -29,9 +29,14 @@ fi
 export GPG_TTY=$(tty)
 
 if [[ $OS == "Darwin" ]]; then
-
+    # add coreutils ahead of bin if installed with homebrew
     if [[ -d /usr/local/opt/coreutils ]]; then
         export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    fi
+
+    # add brew-installed ruby to path
+    if [[ -d /usr/local/opt/ruby ]]; then
+        export PATH="/usr/local/opt/ruby/bin:$PATH"
     fi
 
     if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then

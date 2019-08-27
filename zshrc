@@ -21,12 +21,16 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Will make adjustments to PATH, do it first
+if [[ -d ~/.cargo ]]; then
+# for rustup
+    source ~/.cargo/env
+fi
+
 if (( $+commands[python3] )); then
     local userbase=$(python3 -c 'import site; print(site.USER_BASE)')
     export PATH="$userbase/bin:$PATH"
 fi
-
-export GPG_TTY=$(tty)
 
 if [[ $OS == "Darwin" ]]; then
     # add coreutils ahead of bin if installed with homebrew
@@ -81,11 +85,6 @@ if [ $commands[kubectl] ]; then
     source <(kubectl completion zsh)
 fi
 
-if [[ -d ~/.cargo ]]; then
-    # for rustup
-    source ~/.cargo/env
-fi
-
 if [ -f ~/.local_profile ]; then
     source ~/.local_profile
 fi
@@ -95,3 +94,8 @@ if [ -f "$HOME/.gcloud/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.gcloud/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi
+
+# added by travis gem
+[ -f /Users/dkuntz/.travis/travis.sh ] && source /Users/dkuntz/.travis/travis.sh
+
+#export GPG_TTY=$(tty)

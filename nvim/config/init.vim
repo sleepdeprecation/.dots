@@ -12,6 +12,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'scrooloose/nerdtree'
 
+Plug 'tpope/vim-abolish' " better search/substitute
 Plug 'tpope/vim-endwise' " auto insertion of `end` keyword in ruby
 Plug 'tpope/vim-surround' " easy changing of 'wrapping' characters
 Plug 'tpope/vim-commentary'

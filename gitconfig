@@ -32,10 +32,9 @@
 	fgrep = grep -F
 
 	undo-commit = reset --soft HEAD~1
-
-[include]
-	path = ~/.gitconfig_local
 [commit]
 	gpgsign = true
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg2
+[include]
+	path = ~/.gitconfig_local

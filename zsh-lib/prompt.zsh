@@ -64,7 +64,11 @@ function _prompt_terraform_workspace() {
     fi
 
     local workspace
-    workspace=$(terraform workspace show)
+    local tfcommand="terraform"
+    if command -v tf-12 >/dev/null; then
+        tfcommand="tf-12"
+    fi
+    workspace=$($tfcommand workspace show)
 
     echo -n "%F{$light}tf:%F{068}$workspace"
 }

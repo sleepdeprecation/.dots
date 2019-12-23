@@ -1,3 +1,5 @@
+set -e
+
 # make sure zsh is installed before continuing
 zsh=`command -v zsh`
 if [[ "${zsh}x" == "x" ]]; then

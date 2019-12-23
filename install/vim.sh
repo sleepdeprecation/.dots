@@ -1,4 +1,4 @@
-DOTSTUFFDIR=$(realpath $(dirname $(dirname "$0")))
+. "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 
 function dklink() {
     if [ "$#" -ne 2 ]; then

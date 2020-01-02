@@ -5,3 +5,4 @@ vim/vim
 vim/.netrwhist
 vim/autoload/plug.vim.old
 nvim/share/plugged
+nvim/share/shada

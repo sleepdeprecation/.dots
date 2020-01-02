@@ -97,4 +97,4 @@ if [ -f "$HOME/.gcloud/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.gcloud/g
 if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi
 
 # added by travis gem
-[ -f /Users/dkuntz/.travis/travis.sh ] && source /Users/dkuntz/.travis/travis.sh
+if [ -f "$HOME/.travis/travis.sh" ]; then source "$HOME/.travis/travis.sh"; fi

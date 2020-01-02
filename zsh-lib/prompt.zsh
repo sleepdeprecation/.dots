@@ -60,13 +60,17 @@ function _prompt_virtualenv() {
 function _prompt_terraform_workspace() {
     if [[ ! -d .terraform ]]; then
         echo -n ""
-        return
+        return 0
     fi
 
     local workspace
     local tfcommand="terraform"
     if command -v tf-12 >/dev/null; then
         tfcommand="tf-12"
+    fi
+
+    if ! command -v $tfcommand >/dev/null; then
+        return 0
     fi
     workspace=$($tfcommand workspace show)
 

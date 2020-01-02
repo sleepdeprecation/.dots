@@ -50,6 +50,7 @@ hi PreProc                      ctermfg=197   ctermbg=NONE  cterm=NONE          
 hi Special                      ctermfg=188   ctermbg=NONE  cterm=NONE          guifg=#d4d7d6   guibg=NONE      gui=NONE
 hi SpecialKey                   ctermfg=239   ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE
 hi SpellBad                     ctermfg=NONE  ctermbg=NONE  cterm=underline     guifg=NONE      guibg=NONE      gui=underline
+hi SpellCap                     ctermfg=NONE  ctermbg=NONE  cterm=NONE          guifg=NONE      guibg=NONE      gui=NONE
 hi Statement                    ctermfg=149   ctermbg=NONE  cterm=italic        guifg=#9fca56   guibg=NONE      gui=italic
 hi StorageClass                 ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE
 hi String                       ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE

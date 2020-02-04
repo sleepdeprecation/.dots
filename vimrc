@@ -104,6 +104,9 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " ruby, two spaces, because community convention
 autocmd FileType ruby setlocal softtabstop=2 | setlocal shiftwidth=2 | setlocal tabstop=2
 
+" go, 4 spaces, hard tabs
+autocmd FileType go setlocal softtabstop=4 | setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal noexpandtab
+
 " new things from http://statico.github.com/vim.html
 nmap \l :setlocal number!<CR>
 nmap \o :set paste!<CR>
@@ -130,31 +133,13 @@ nmap \n :bnext<CR>
 nmap \p :bprev<CR>
 
 
-" ctrl-p stuffs
-let g:ctrlp_map = '<leader>ff'
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_user_command = {
-    \ 'types': {
-        \ 1: ['.git', 'cd %s && git ls-files . -oc --exclude-standard', 'find %s -type f'],
-        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-    \ 'fallback': 'find %s -type f'
-\ }
-
-nmap <C-p> :CtrlPMixed<CR>
-
 " NERDTree things
 nmap \nt :NERDTreeToggle<CR>
 nmap \nf :NERDTreeFocus<CR>
 let NERDTreeMapOpenRecursively="+"
 let NERDTreeMapCloseChildren="-"
 let NERDTreeIgnore = ['\.pyc$']
+
 
 " Commentary
 map <localleader>cc :Commentary<CR>
@@ -194,12 +179,3 @@ if has('gui_running')
     set columns=120
     " autocmd vimenter * NERDTree
 endif
-
-" vimux stuff
-"let g:VimuxUseNearestPane = 1
-
-" rspec vimux mapping
-" nmap \rf :call RunCurrentSpecFile()<CR>
-" nmap \rs :call RunNearestSpec()<CR>
-" nmap \rl :call RunLastSpec()<CR>
-" map \ra :call RunAllSpecs()<CR>

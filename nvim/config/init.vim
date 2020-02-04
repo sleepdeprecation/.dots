@@ -105,7 +105,8 @@ nmap <leader>ff :FuzzyOpen<CR>
 nmap <leader>nt :NERDTreeToggle<CR>
 nmap <leader>nf :NERDTreeFocus<CR>
 
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__/*$']
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " disable folding
 set nofoldenable
@@ -129,3 +130,6 @@ autocmd FileType terraform setlocal commentstring=#\ %s
 
 " Commentary
 map <localleader>cc :Commentary<CR>
+
+" go
+autocmd FileType go setlocal softtabstop=4 | setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal noexpandtab

@@ -18,7 +18,7 @@ Plug 'tpope/vim-surround' " easy changing of 'wrapping' characters
 Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
 
-"Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
 Plug 'hashivim/vim-terraform'

@@ -7,3 +7,4 @@ vim/autoload/plug.vim.old
 nvim/share/plugged
 nvim/share/shada
 nvim/share/site/autoload/plug.vim.old
+nvim/config/.netrwhist

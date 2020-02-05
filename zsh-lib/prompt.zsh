@@ -1,11 +1,35 @@
 autoload -U colors && colors
 autoload -U add-zsh-hook
-setopt prompt_subst
+setopt PROMPT_SUBST
 
 local light="242"
 local sep="%F{$light}•%f"
 
+# terraform variables
+local _prompt_has_terraform=false # change based on dir
+
+local _prompt_terraform_command="terraform"
+if command -v tf-12 >/dev/null; then
+    _prompt_terraform_command="tf-12"
+fi
+
+# git variabless
+local _prompt_has_git=false
+
+function _prompt_uses_git() {
+   if  [ -d .git ] || command git rev-parse --git-dir > /dev/null 2>&1; then
+       _prompt_has_git=true
+   else
+       _prompt_has_git=false
+   fi
+}
+
 function _prompt_git() {
+
+    if [[ $_prompt_has_git == false ]]; then
+        return 0
+    fi
+
     local ref
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
         ref=$(command git rev-pase --short HEAD 2> /dev/null) || return 0
@@ -57,22 +81,26 @@ function _prompt_virtualenv() {
     echo -n "%F{$light}py:%F{114}${base}"
 }
 
-function _prompt_terraform_workspace() {
+function _prompt_uses_terraform() {
     if [[ ! -d .terraform ]]; then
+        _prompt_has_terraform=false
+    else
+        _prompt_has_terraform=true
+    fi
+}
+
+function _prompt_terraform_workspace() {
+    if [[ ! $_prompt_has_terraform == true ]]; then
         echo -n ""
         return 0
     fi
 
     local workspace
-    local tfcommand="terraform"
-    if command -v tf-12 >/dev/null; then
-        tfcommand="tf-12"
-    fi
 
-    if ! command -v $tfcommand >/dev/null; then
+    if ! command -v $_prompt_terraform_command >/dev/null; then
         return 0
     fi
-    workspace=$($tfcommand workspace show)
+    workspace=$($_prompt_terraform_command workspace show)
 
     echo -n "%F{$light}tf:%F{068}$workspace"
 }
@@ -102,7 +130,14 @@ function _prompt_status() {
     fi
 }
 
+function _prompt_chdir() {
+    _prompt_uses_terraform
+    _prompt_uses_git
+}
+
 function _prompt() {
+    local prompt_prefix
+    prompt_prefix="%(?.%F{green}▲%f.%F{red}△%f)"
     echo -n "\n $prompt_prefix %F{blue}$me%F{cyan}@$short_host%f"
     local status_prompt
     status_prompt="$(_prompt_status)"
@@ -117,14 +152,12 @@ function _prompt() {
 short_host=`hostname`
 me=`whoami`
 function _prompt_render() {
-    if [ $? -eq 0 ]; then
-        prompt_prefix="%F{green}▲%f"
-    else
-        prompt_prefix="%F{red}△%f"
-    fi
-
     PROMPT="$(_prompt)"
 }
 
+# run on start in case new zsh session is in special directory
+_prompt_chdir
+
 add-zsh-hook precmd _prompt_render
+add-zsh-hook chpwd _prompt_chdir
 PROMPT2=" ◇ "

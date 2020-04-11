@@ -8,7 +8,7 @@ endif
 let g:colors_name = "seti-dk"
 
 hi Cursor                       ctermfg=16    ctermbg=222   cterm=NONE          guifg=#151718   guibg=#ffe792   gui=NONE
-hi Visual                       ctermfg=NONE  ctermbg=74    cterm=NONE          guifg=NONE      guibg=#4fa5c7   gui=NONE
+hi Visual                       ctermfg=NONE  ctermbg=31    cterm=NONE          guifg=NONE      guibg=#4fa5c7   gui=NONE
 hi CursorLine                   ctermfg=NONE  ctermbg=237   cterm=NONE          guifg=NONE      guibg=#3a3a3a   gui=NONE
 hi CursorLineNR                 ctermfg=155   ctermbg=237   cterm=NONE          guifg=#afff5f   guibg=#3a3a3a   gui=NONE
 hi CursorColumn                 ctermfg=NONE  ctermbg=235   cterm=NONE          guifg=NONE      guibg=#282a2b   gui=NONE

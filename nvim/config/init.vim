@@ -133,3 +133,4 @@ map <localleader>cc :Commentary<CR>
 
 " go
 autocmd FileType go setlocal softtabstop=4 | setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal noexpandtab
+let g:go_gopls_enabled = 0 " turn off gopls

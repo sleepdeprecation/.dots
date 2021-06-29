@@ -9,8 +9,8 @@ local sep="%F{$light}•%f"
 local _prompt_has_terraform=false # change based on dir
 
 local _prompt_terraform_command="terraform"
-if command -v tf-12 >/dev/null; then
-    _prompt_terraform_command="tf-12"
+if command -v tf-14 >/dev/null; then
+    _prompt_terraform_command="tf-14"
 fi
 
 # git variabless

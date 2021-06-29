@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ "$1" == "stag" || "$1" == "staging" ]]; then
+if [[ "$1" == "use" || "$1" == "install" ]]; then
+  tfenv "$@"
+elif [[ "$1" == "stag" || "$1" == "staging" ]]; then
     shift
     terraform workspace select staging "$@"
 elif [[ "$1" == "prod" || "$1" == "production" || "$1" == "default" ]]; then
@@ -18,4 +20,3 @@ elif [[ "$1" == "yolo" ]]; then
 else
     terraform "$@"
 fi
-

@@ -24,6 +24,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'hashivim/vim-terraform'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'itkq/fluentd-vim'
 
 Plug 'tpope/vim-fugitive'
 

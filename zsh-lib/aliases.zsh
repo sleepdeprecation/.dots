@@ -14,7 +14,11 @@ ecr-login() {
     profile=""
   fi
 
-  $(env AWS_PROFILE="$profile" aws ecr get-login --no-include-email --region us-east-1)
+  # get account id
+  sts=$(aws --profile="$profile" sts get-caller-identity)
+  account=$(echo "$sts" | jq -r '.Account')
+
+  env AWS_PROFILE="$profile" aws ecr get-login-password | docker login --username AWS --password-stdin "${account}.dkr.ecr.us-east-1.amazonaws.com"
 }
 
 amis() {

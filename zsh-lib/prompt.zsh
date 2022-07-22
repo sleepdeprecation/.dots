@@ -5,14 +5,6 @@ setopt PROMPT_SUBST
 local light="242"
 local sep="%F{$light}•%f"
 
-# terraform variables
-local _prompt_has_terraform=false # change based on dir
-
-local _prompt_terraform_command="terraform"
-if command -v tf-14 >/dev/null; then
-    _prompt_terraform_command="tf-14"
-fi
-
 # git variabless
 local _prompt_has_git=false
 
@@ -81,45 +73,13 @@ function _prompt_virtualenv() {
     echo -n "%F{$light}py:%F{114}${base}"
 }
 
-function _prompt_uses_terraform() {
-    if [[ ! -d .terraform ]]; then
-        _prompt_has_terraform=false
-    else
-        _prompt_has_terraform=true
-    fi
-}
-
-function _prompt_terraform_workspace() {
-    if [[ ! $_prompt_has_terraform == true ]]; then
-        echo -n ""
-        return 0
-    fi
-
-    local workspace
-
-    if ! command -v $_prompt_terraform_command >/dev/null; then
-        return 0
-    fi
-    workspace=$($_prompt_terraform_command workspace show)
-
-    echo -n "%F{$light}tf:%F{068}$workspace"
-}
-
 function _prompt_status() {
     local git_prompt venv_prompt tf_prompt
     git_prompt=$(_prompt_git)
     venv_prompt=$(_prompt_virtualenv)
-    tf_prompt=$(_prompt_terraform_workspace)
 
     if [[ $venv_prompt != "" ]]; then
         echo -n "${venv_prompt}"
-        if [[ $git_prompt != "" || $tf_prompt != "" ]]; then
-            echo -n " $sep "
-        fi
-    fi
-
-    if [[ $tf_prompt != "" ]]; then
-        echo -n "${tf_prompt}"
         if [[ $git_prompt != "" ]]; then
             echo -n " $sep "
         fi
@@ -131,7 +91,6 @@ function _prompt_status() {
 }
 
 function _prompt_chdir() {
-    _prompt_uses_terraform
     _prompt_uses_git
 }
 

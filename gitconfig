@@ -36,3 +36,5 @@
 	path = ~/.gitconfig_local
 [init]
 	defaultBranch = main
+[rerere]
+	enabled = true

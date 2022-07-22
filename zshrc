@@ -34,7 +34,7 @@ if [[ $OS == "Darwin" ]]; then
     #     export PATH="/usr/local/opt/coreutils/libexec/gnubin"
     # fi
 
-    # add brew-installed ruby to path
+    # add brew-installed ruby to path, before base path
     if [[ -d /usr/local/opt/ruby ]]; then
         export PATH="/usr/local/opt/ruby/bin:$PATH"
     fi
@@ -42,6 +42,13 @@ if [[ $OS == "Darwin" ]]; then
     if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then
         export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
     fi
+fi
+
+# add GOPATH/bin to path, if it exists
+if [[ "${GOPATH}x" != "x" ]]; then
+  if [[ -d "${GOPATH}/bin" ]]; then
+    export PATH="$PATH:$GOPATH/bin"
+  fi
 fi
 
 export PATH="$HOME/bin:/usr/local/sbin:$PATH"

@@ -34,6 +34,11 @@ if [[ $OS == "Darwin" ]]; then
     #     export PATH="/usr/local/opt/coreutils/libexec/gnubin"
     # fi
 
+    # add homebrew m1 bin path
+    if [[ -d /opt/homebrew/bin ]]; then
+        export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+    fi
+
     # add brew-installed ruby to path, before base path
     if [[ -d /usr/local/opt/ruby ]]; then
         export PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -51,7 +56,12 @@ if [[ "${GOPATH}x" != "x" ]]; then
   fi
 fi
 
-export PATH="$HOME/bin:/usr/local/sbin:$PATH"
+# add rancher desktop to path
+if [[ -d "$HOME/.rd/bin" ]]; then
+  export PATH="$PATH:$HOME/.rd/bin"
+fi
+
+export PATH="$HOME/bin:$PATH"
 
 if [[ -d $HOME/.zsh-lib ]]; then
     for config_file ($HOME/.zsh-lib/*.zsh); do
@@ -91,9 +101,9 @@ elif [[ -x /usr/local/bin/python2 || -x /usr/bin/python2 ]]; then
 fi
 
 # enable kubectl completion
-if [ $commands[kubectl] ]; then
-    source <(kubectl completion zsh)
-fi
+#if [ $commands[kubectl] ]; then
+#    source <(kubectl completion zsh)
+#fi
 
 if [ -f ~/.local_profile ]; then
     source ~/.local_profile

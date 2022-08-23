@@ -40,7 +40,7 @@ hi ErrorMsg                     ctermfg=231   ctermbg=NONE  cterm=NONE          
 hi WarningMsg                   ctermfg=231   ctermbg=NONE  cterm=NONE          guifg=#f8f8f8   guibg=NONE      gui=NONE
 hi Float                        ctermfg=167   ctermbg=NONE  cterm=NONE          guifg=#cd3f45   guibg=NONE      gui=NONE
 hi Function                     ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
-hi Identifier                   ctermfg=185   ctermbg=NONE  cterm=NONE          guifg=#e6cd69   guibg=NONE      gui=NONE
+hi Identifier                   ctermfg=140   ctermbg=NONE  cterm=NONE          guifg=#800080   guibg=NONE      gui=NONE
 hi Keyword                      ctermfg=149   ctermbg=NONE  cterm=NONE          guifg=#9fca56   guibg=NONE      gui=NONE
 hi Label                        ctermfg=74    ctermbg=NONE  cterm=NONE          guifg=#55b5db   guibg=NONE      gui=NONE
 hi NonText                      ctermfg=238   ctermbg=NONE  cterm=NONE          guifg=#abaee8   guibg=NONE      gui=NONE

@@ -10,7 +10,8 @@ Plug 'tpope/vim-sleuth'
 " file/buffer navigation
 Plug 'jlanzarotta/bufexplorer'
 Plug 'cloudhead/neovim-fuzzy'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
+Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'tpope/vim-abolish' " better search/substitute
 Plug 'tpope/vim-endwise' " auto insertion of `end` keyword in ruby
@@ -32,6 +33,8 @@ Plug 'sjl/badwolf'
 
 call plug#end()
 filetype plugin indent on
+
+lua require('config')
 
 " basic
 colorscheme seti-dk
@@ -102,9 +105,9 @@ let g:sleuth_automatic = 0
 nnoremap <C-p> :FuzzyOpen<CR>
 nmap <leader>ff :FuzzyOpen<CR>
 
-" nerdtree
-nmap <leader>nt :NERDTreeToggle<CR>
-nmap <leader>nf :NERDTreeFocus<CR>
+" chadtree
+nmap <leader>nt :NvimTreeToggle<CR>
+nmap <leader>nf :NvimTreeFocus<CR>
 
 let NERDTreeIgnore = ['\.pyc$', '__pycache__/*$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -135,3 +138,6 @@ map <localleader>cc :Commentary<CR>
 " go
 autocmd FileType go setlocal softtabstop=4 | setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal noexpandtab
 let g:go_gopls_enabled = 0 " turn off gopls
+let g:go_fmt_autosave = 1
+let g:go_imports_autosave = 1
+let g:go_imports_mode = 'goimports'

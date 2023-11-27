@@ -1,3 +1,7 @@
+if [[ -d ~/.colima ]]; then
+    export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+fi
+
 function docker-clean-images() {
     images_to_remove=$(docker images -q -f dangling=true)
 

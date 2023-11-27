@@ -100,11 +100,6 @@ elif [[ -x /usr/local/bin/python2 || -x /usr/bin/python2 ]]; then
     alias pyhttpme='python2 -m SimpleHTTPServer'
 fi
 
-# enable kubectl completion
-#if [ $commands[kubectl] ]; then
-#    source <(kubectl completion zsh)
-#fi
-
 if [ -f ~/.local_profile ]; then
     source ~/.local_profile
 fi
@@ -115,3 +110,7 @@ if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gc
 
 # added by travis gem
 if [ -f "$HOME/.travis/travis.sh" ]; then source "$HOME/.travis/travis.sh"; fi
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/skuntz/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

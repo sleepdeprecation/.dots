@@ -3,7 +3,9 @@
 [user]
 	email = sleep@kuntz.co
 	name = Sleep Kuntz
-	signingkey = EBA7AEF98657FB2E
+	signingkey = B03EA78EF057D6A5
+[commit]
+    gpgsign = true
 [push]
 	default = current
 	followTags = true

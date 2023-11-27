@@ -10,8 +10,8 @@ Plug 'tpope/vim-sleuth'
 " file/buffer navigation
 Plug 'jlanzarotta/bufexplorer'
 Plug 'cloudhead/neovim-fuzzy'
-" Plug 'scrooloose/nerdtree'
-Plug 'nvim-tree/nvim-tree.lua'
+Plug 'preservim/nerdtree'
+"Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'tpope/vim-abolish' " better search/substitute
 Plug 'tpope/vim-endwise' " auto insertion of `end` keyword in ruby
@@ -109,9 +109,8 @@ let g:sleuth_automatic = 0
 nnoremap <C-p> :FuzzyOpen<CR>
 nmap <leader>ff :FuzzyOpen<CR>
 
-" chadtree
-nmap <leader>nt :NvimTreeToggle<CR>
-nmap <leader>nf :NvimTreeFocus<CR>
+nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>nf :NERDTreeFocus<CR>
 
 let NERDTreeIgnore = ['\.pyc$', '__pycache__/*$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

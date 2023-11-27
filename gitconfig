@@ -1,8 +1,8 @@
 # vim: set ft=gitconfig:
 
 [user]
-	email = don@kuntz.co
-	name = Don Kuntz
+	email = sleep@kuntz.co
+	name = Sleep Kuntz
 	signingkey = EBA7AEF98657FB2E
 [push]
 	default = current
@@ -32,9 +32,11 @@
 	fgrep = grep -F
 
 	undo-commit = reset --soft HEAD~1
-[include]
-	path = ~/.gitconfig_local
 [init]
 	defaultBranch = main
 [rerere]
 	enabled = true
+[core]
+    excludesfiles = ~/.gitignore
+[include]
+	path = ~/.gitconfig_local

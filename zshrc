@@ -42,6 +42,8 @@ if [[ $OS == "Darwin" ]]; then
     # add brew-installed ruby to path, before base path
     if [[ -d /usr/local/opt/ruby ]]; then
         export PATH="/usr/local/opt/ruby/bin:$PATH"
+    elif [[ -d /opt/homebrew/opt/ruby/bin ]]; then
+      export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
     fi
 
     if [[ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]]; then

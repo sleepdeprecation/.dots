@@ -30,6 +30,7 @@ Plug 'itkq/fluentd-vim'
 Plug 'tpope/vim-fugitive'
 
 Plug 'sjl/badwolf'
+Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -38,6 +39,9 @@ lua require('config')
 
 " basic
 colorscheme seti-dk
+
+" disable mouse
+set mouse=
 
 set number
 syntax on

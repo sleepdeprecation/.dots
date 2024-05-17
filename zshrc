@@ -58,6 +58,11 @@ if [[ "${GOPATH}x" != "x" ]]; then
   fi
 fi
 
+# add composer bin to path, if it exists
+if [[ -d "$HOME/.composer/vendor/bin" ]]; then
+  export PATH="$PATH:$HOME/.composer/vendor/bin"
+fi
+
 # add rancher desktop to path
 if [[ -d "$HOME/.rd/bin" ]]; then
   export PATH="$PATH:$HOME/.rd/bin"

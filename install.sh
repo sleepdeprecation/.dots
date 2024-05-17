@@ -27,4 +27,4 @@ fi
 
 . install/relink.sh
 . install/terminfo.sh
-. install/vim.sh
+. install/nvim.sh

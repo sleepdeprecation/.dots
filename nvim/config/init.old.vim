@@ -16,7 +16,6 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-abolish' " better search/substitute
 Plug 'tpope/vim-endwise' " auto insertion of `end` keyword in ruby
 Plug 'tpope/vim-surround' " easy changing of 'wrapping' characters
-Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'fatih/vim-go'
@@ -39,6 +38,12 @@ lua require('config')
 
 " basic
 colorscheme seti-dk
+
+" disable language providers i don't care about
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
+let g:loaded_python3_provider = 0
+let g:loaded_ruby_provider = 0
 
 " disable mouse
 set mouse=
@@ -101,6 +106,9 @@ map <Up> gk
 imap <Down> <C-o>gj
 imap <Up> <C-o>gk
 
+" /cc for commenting selected lines
+map <localleader>cc gcc
+
 " sleuth
 let g:sleuth_automatic = 0
 
@@ -135,8 +143,6 @@ let g:terraform_fmt_on_save = 1
 let g:terraform_commentstring = '#\ %s'
 autocmd FileType terraform setlocal commentstring=#\ %s
 
-" Commentary
-map <localleader>cc :Commentary<CR>
 
 " go
 autocmd FileType go setlocal softtabstop=4 | setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal noexpandtab

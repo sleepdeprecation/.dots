@@ -115,7 +115,13 @@ return {
     build = ':lua require("go.install").update_all_sync()',
     config = function()
       require("lspconfig").gopls.setup({})
-      require("go").setup({})
+      require("go").setup({
+        lsp_codelens = false,
+        lsp_keymaps = false,
+        lsp_inlay_hints = {
+          enable = false,
+        },
+      })
     end,
   },
 

@@ -47,6 +47,9 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+-- turn off lsp diagnostics messages -- i don't like them in IDEs i like them even less in vim
+vim.diagnostic.disable()
+
 -- general vim settings
 vim.o.number = true
 vim.o.cursorline = true
@@ -96,4 +99,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     require("go.format").goimports()
   end,
   group = format_sync_go
+})
+
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = "go",
+  callback = function()
+    vim.opt_local.expandtab = false
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+  end,
 })

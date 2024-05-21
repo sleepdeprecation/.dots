@@ -1,11 +1,11 @@
-" Don's Seti
+" Sleep's Seti
 " Based off of https://github.com/trusktr/seti.vim
 
 if exists("syntax_on")
-syntax reset
+  syntax reset
 endif
 
-let g:colors_name = "seti-dk"
+let g:colors_name = "seti-sleep"
 
 hi Cursor                       ctermfg=16    ctermbg=222   cterm=NONE          guifg=#151718   guibg=#ffe792   gui=NONE
 hi Visual                       ctermfg=NONE  ctermbg=31    cterm=NONE          guifg=NONE      guibg=#4fa5c7   gui=NONE

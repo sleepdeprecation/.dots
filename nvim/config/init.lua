@@ -36,7 +36,10 @@ require("lazy").setup("plugins", {
   },
 })
 
-vim.cmd.colorscheme("seti-dk")
+require("lush")(require("lush_theme/sleep"))
+--vim.cmd.colorscheme(colors_sleep)
+
+-- vim.cmd.colorscheme("seti-dk")
 
 -- disable language providers
 vim.g.loaded_node_provider = 0

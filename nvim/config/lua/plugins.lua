@@ -1,5 +1,9 @@
 return {
   {
+    "rktjmp/lush.nvim",
+    lazy = false,
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
@@ -84,6 +88,9 @@ return {
 
           "ruby",
           "python", "requirements",
+        },
+        highlight = {
+          enable = true,
         },
       })
     end,

@@ -9,7 +9,6 @@ fi
 
 export LESS="-RFX"
 export PAGER="less"
-export GOPATH=~/go
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -52,9 +51,12 @@ if [[ $OS == "Darwin" ]]; then
 fi
 
 # add GOPATH/bin to path, if it exists
+export GOPATH=~/go
+
 if [[ "${GOPATH}x" != "x" ]]; then
   if [[ -d "${GOPATH}/bin" ]]; then
-    export PATH="$PATH:$GOPATH/bin"
+    export GOBIN="$GOPATH/bin"
+    export PATH="$PATH:$GOBIN"
   fi
 fi
 

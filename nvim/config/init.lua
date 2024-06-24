@@ -91,14 +91,16 @@ vim.keymap.set("i", "<Up>", "<C-o>gk")
 vim.cmd[[nmap <localleader>cc gcc]]
 vim.cmd[[vmap <localleader>cc gc]]
 
+-- disable mouse
+vim.o.mouse = ""
+
 -- autoformat go
-local format_sync_go = vim.api.nvim_create_augroup("GoFormat", {})
+-- local format_sync_go = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
     require("go.format").goimports()
   end,
-  group = format_sync_go
 })
 
 vim.api.nvim_create_autocmd("Filetype", {

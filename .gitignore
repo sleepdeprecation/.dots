@@ -11,3 +11,5 @@ nvim/config/.netrwhist
 nvim/share/lazy
 nvim/share/site/pack
 nvim/share/neo-tree.nvim.log
+nvim/share/telescope_history
+nvim/share/tree-sitter*

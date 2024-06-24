@@ -13,3 +13,5 @@ nvim/share/site/pack
 nvim/share/neo-tree.nvim.log
 nvim/share/telescope_history
 nvim/share/tree-sitter*
+
+nvim/config/lazy-lock.json

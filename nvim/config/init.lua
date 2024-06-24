@@ -37,8 +37,6 @@ require("lazy").setup("plugins", {
 })
 
 require("lush")(require("lush_theme/sleep"))
---vim.cmd.colorscheme(colors_sleep)
-
 -- vim.cmd.colorscheme("seti-dk")
 
 -- disable language providers
@@ -110,5 +108,21 @@ vim.api.nvim_create_autocmd("Filetype", {
     vim.opt_local.softtabstop = 4
     vim.opt_local.shiftwidth = 4
     vim.opt_local.tabstop = 4
+  end,
+})
+
+-- autoformat terraform
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+  pattern = {"*.tf", "*.tfvars"},
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
+-- terraform comment string
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = {"terraform", "hcl"},
+  callback = function()
+    vim.opt_local.commentstring="# %s"
   end,
 })

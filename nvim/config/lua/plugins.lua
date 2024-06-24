@@ -53,6 +53,13 @@ return {
   },
 
   {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("lspconfig").terraformls.setup({})
+    end,
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
@@ -88,6 +95,8 @@ return {
 
           "ruby",
           "python", "requirements",
+
+          "hcl", "terraform",
         },
         highlight = {
           enable = true,
@@ -95,8 +104,6 @@ return {
       })
     end,
   },
-
-  -- "jlanzarotta/bufexplorer",
 
   {
     "bronson/vim-trailing-whitespace",

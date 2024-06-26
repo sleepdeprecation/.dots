@@ -100,6 +100,7 @@ return {
         },
         highlight = {
           enable = true,
+          disable = {"html"},
         },
       })
     end,

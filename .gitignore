@@ -15,3 +15,7 @@ nvim/share/telescope_history
 nvim/share/tree-sitter*
 
 nvim/config/lazy-lock.json
+nvim/share/.netrwhist
+nvim/share/mason
+nvim/share/*.log
+zsh-lib/duetto-*

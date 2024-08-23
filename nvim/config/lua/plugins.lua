@@ -41,6 +41,15 @@ return {
             ["I"] = "toggle_hidden",
           },
         },
+
+        filesystem = {
+          filtered_items = {
+            always_show = {
+              ".gitignore",
+              ".github",
+            },
+          },
+        },
       })
     end,
   },
@@ -53,9 +62,21 @@ return {
   },
 
   {
+    "nvim-java/nvim-java",
+    config = function()
+      require("java").setup({
+        jdk = {
+          auto_install = false,
+        },
+      })
+    end,
+  },
+
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require("lspconfig").terraformls.setup({})
+      require("lspconfig").jdtls.setup({})
     end,
   },
 
@@ -97,6 +118,8 @@ return {
           "python", "requirements",
 
           "hcl", "terraform",
+
+          "java", "groovy",
         },
         highlight = {
           enable = true,

@@ -64,8 +64,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("lspconfig").terraformls.setup({})
-      require("lspconfig").jdtls.setup({})
+      vim.lsp.enable("terraformls")
+      vim.lsp.enable("jdtls")
     end,
   },
 
@@ -110,7 +110,7 @@ return {
         },
         highlight = {
           enable = true,
-          disable = {"html"},
+          disable = {"html", "dockerfile"},
         },
       })
     end,
@@ -132,7 +132,7 @@ return {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()',
     config = function()
-      require("lspconfig").gopls.setup({})
+      vim.lsp.enable("gopls")
       require("go").setup({
         lsp_codelens = false,
         lsp_keymaps = false,

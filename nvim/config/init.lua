@@ -37,7 +37,6 @@ require("lazy").setup("plugins", {
 })
 
 require("lush")(require("lush_theme/sleep"))
--- vim.cmd.colorscheme("seti-dk")
 
 -- disable language providers
 vim.g.loaded_node_provider = 0
@@ -46,7 +45,7 @@ vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 -- turn off lsp diagnostics messages -- i don't like them in IDEs i like them even less in vim
-vim.diagnostic.disable()
+vim.diagnostic.enable(false)
 
 -- general vim settings
 vim.o.number = true
